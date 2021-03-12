@@ -84,16 +84,16 @@ JAZZMIN_SETTINGS = {
     "site_title": "Admin",
 
     # Title on the brand, and login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Tecnologia",
+    "site_header": "Washington Natural Gas",
 
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
     "site_logo": "img/logo.png",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the Tecnologia",
+    "welcome_sign": "Welcome to the Washington Natural Gas",
 
     # Copyright on the footer
-    "copyright": "Tecnologia",
+    "copyright": "Washington Natural Gas",
 
     # The model admin to search from the search bar, search bar omitted if excluded
     #"search_model": "auth.User",
