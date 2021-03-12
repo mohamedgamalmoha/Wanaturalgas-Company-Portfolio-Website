@@ -1,0 +1,11 @@
+{% load static %}
+
+<nav>
+    Nave bar here
+</nav>
+
+{% if request.user.is_authenticated and request.user.is_staff %}
+<div>
+    <a href="{% url 'admin:index' %}">Go To Admin</a>
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="description" content="{% block description %}Washington Natural Gas{% endblock %}">
+    <meta name="robots" content="{% block robots %}noindex, nofollow{% endblock %}">
+    <title>{% block title %}Washington Natural Gas{% endblock %}</title>
+    {% include 'base/css.html' %}
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
+  </head>
+  <body>
+    {% include 'base/navbar.html' %}
+
+    <div id="page-container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    {% include 'base/footer.html' %}
+    {% include 'base/js.html' %}
+  </body>
+</html>
