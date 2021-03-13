@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+# path to admin page 'env\Lib\site-packages\jazzmin\templates\admin\edit_inline\tabular.html'
+#  <tr class="form-row" style="display:flex; flex-direction:column; width: 1000px;">
 
 from pathlib import Path
 
@@ -81,9 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wanaturalgas.wsgi.application'
-
-
-
 
 
 JAZZMIN_SETTINGS = {
