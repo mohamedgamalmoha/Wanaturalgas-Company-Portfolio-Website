@@ -3,9 +3,13 @@ Django==3.1.7
 django-ckeditor==6.0.0
 django-jazzmin==2.4.4
 django-js-asset==1.2.2
+django-multiselectfield==0.1.12
+django-phonenumber-field==5.0.0
 flake8==3.8.4
 importlib-metadata==3.7.2
 mccabe==0.6.1
+phonenumbers==8.12.19
+Pillow==8.1.2
 pip-autoremove==0.9.1
 pycodestyle==2.6.0
 pyflakes==2.2.0

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '9$hkcf(@+b7pckl)t+y)phh-=1w7#l_^=8i(&qh))))z_d-*w%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     # Installed Packages
     'jazzmin',
     'ckeditor',
+    'phonenumber_field',
+    'multiselectfield',
+
+    # Project Apps
+    'pages.apps.PagesConfig',
+    'receives.apps.ReceivesConfig',
+    'service.apps.ServiceConfig',
 
     'django.contrib.admin', # At the end to apply the jazzmin theme
 ]
