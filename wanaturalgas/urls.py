@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', hometest, name='home'),
     # path('', include('pages.urls', namespace='pages')),
-    # path('', include('receives.urls', namespace='receives')),
+    path('', include('receives.urls', namespace='receives')),
     # path('', include('service.urls', namespace='service')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
