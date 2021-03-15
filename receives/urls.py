@@ -4,6 +4,6 @@ from django.urls import path
 app_name = 'receives'
 
 urlpatterns = [
-    path('contact', ContactView, name='contact'),
-    path('main_form', MainRequestView, name='main_form'),
+    path('contact-us/', ContactView, name='contact_us'),
+    # path('submit-request/', MainRequestView, name='main_form'),
 ]

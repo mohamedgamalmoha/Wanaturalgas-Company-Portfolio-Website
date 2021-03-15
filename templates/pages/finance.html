@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block description %}Washington Natural Gas{% endblock %}
+{% block robots %}index, follow{% endblock %}
+
+{% block title %}Financing{% endblock %}
+
+{% block content %}
+    
+ 
+<div>
+    <h2>{{ finance.title }}</h2>
+
+    <img src="{{ finance.image.url }}" alt="finance" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
+
+    <p>{{ finance.description|safe }}</p>
+</div>
+
+
+
+{% endblock %}

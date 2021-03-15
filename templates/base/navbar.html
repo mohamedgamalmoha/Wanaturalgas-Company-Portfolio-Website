@@ -2,6 +2,13 @@
 
 <nav>
     Nave bar here
+    <ul>
+        <li><a href="{% url 'pages:home' %}">Home</a>{% if active == 'home' %} <---{% endif %}</li>
+        <li><a href="{% url 'pages:about_us' %}">About Us</a>{% if active == 'about' %} <---{% endif %}</li>
+        <li><a href="{% url 'pages:residential' %}">Residential</a>{% if active == 'residential' %} <---{% endif %}</li>
+        <li><a href="{% url 'pages:financing' %}">Financing</a>{% if active == 'financing' %} <---{% endif %}</li>
+        <li><a href="{% url 'receives:contact_us' %}">Contact Us</a>{% if active == 'contact' %} <---{% endif %}</li>
+    </ul>
 </nav>
 
 {% if request.user.is_authenticated and request.user.is_staff %}

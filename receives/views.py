@@ -9,6 +9,7 @@ def ContactView(request):
             form.save()
     context = {
         'form': ContactForm,
+        'active': 'contact',
     }
     return render(request, 'receives/contact.html', context)
 
