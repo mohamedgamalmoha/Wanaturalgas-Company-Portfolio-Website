@@ -995,10 +995,6 @@ section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd 
   color: #fff;
 }
 
-ul, ol {
-  list-style: none;
-}
-
 body {
   overflow-x: hidden;
   overflow: hidden;
