@@ -28,7 +28,7 @@
                     {% endif %}
                     <tr class="form-row{% if inline_admin_form.original or inline_admin_form.show_url %} has_original{% endif %}{% if forloop.last and inline_admin_formset.has_add_permission %} empty-form{% endif %}"
                         id="{{ inline_admin_formset.formset.prefix }}-{% if not forloop.last %}{{ forloop.counter0 }}{% else %}empty{% endif %}"
-                        style="display:flex; flex-direction:column; width: 1500px;"
+                        style="display:flex; flex-direction:column; width: 1200px;"
                     >
                         <td class="original">
                             {% if inline_admin_form.original or inline_admin_form.show_url %}
@@ -53,8 +53,7 @@
                                     {% endif %}
                                 {% endif %}
                             </p>
-                            {% else %}
-                            <i class="fas fa-plus fa-sm text-success"> </i>
+
                             {% endif %}
                             {% if inline_admin_form.needs_explicit_pk_field %}{{ inline_admin_form.pk_field.field }}{% endif %}
                             {% if inline_admin_form.fk_field %}{{ inline_admin_form.fk_field.field }}{% endif %}
@@ -86,7 +85,12 @@
                             {% endfor %}
                         {% endfor %}
                         {% if inline_admin_formset.formset.can_delete and inline_admin_formset.has_delete_permission %}
-                         <td class="delete"><font size="4" color="red">Delete?</font> {% if inline_admin_form.original %}{{ inline_admin_form.deletion_field.field }}{% endif %}</td>
+                         <td class="delete">
+                             {% if inline_admin_form.original %}
+                                <font size="4" color="red">Delete?</font>
+                                {{ inline_admin_form.deletion_field.field }}
+                             {% endif %}
+                         </td>
                         {% endif %}
                     </tr>
                 {% endfor %}
