@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'base/navbar.html' %}
+{% include 'base/css.html' %}
+
+<h4> {{ heating.title }}</h4> <br>
+{{ heating.description|safe }}
+
+{% for post in posts %}
+    <a href="{% url 'service:heating_post' heating.id post.id %}">{{ post.title }}</a>
+    {{ post.image }}
+    {{ post.description }}
+{% endfor %}
+
+{% include 'base/footer.html' %}
+{% include 'base/js.html' %}
+</body>
+</html>

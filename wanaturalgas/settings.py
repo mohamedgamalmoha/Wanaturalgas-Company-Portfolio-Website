@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # Project Apps
     'pages.apps.PagesConfig',
     'receives.apps.ReceivesConfig',
-    # 'service.apps.ServiceConfig',
+    'service.apps.ServiceConfig',
 
     'django.contrib.admin', # At the end to apply the jazzmin theme
 ]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include 'base/navbar.html' %}
+{% include 'base/css.html' %}
+
+<h4> {{ cooling.title }}</h4> <br>
+{{ cooling.description|safe }}
+{{ cooling.image }}
+
+{% for post in posts %}
+     <a href="{% url 'service:cooling_post' cooling.id post.id %}">{{ post.title }}</a>
+    {{ post.image }}
+    {{ post.description }}
+{% endfor %}
+
+{% include 'base/footer.html' %}
+{% include 'base/js.html' %}
+</body>
+</html>
