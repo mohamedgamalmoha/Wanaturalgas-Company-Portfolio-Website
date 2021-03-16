@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'phonenumber_field',
     'multiselectfield',
+    'crispy_forms',
 
     # Project Apps
     'pages.apps.PagesConfig',
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.admin', # At the end to apply the jazzmin theme
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,6 +67,22 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'wanaturalgas.urls'
+
+
+# Styling Messages with bootstrap classes
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
 TEMPLATES = [
     {
@@ -90,10 +108,10 @@ JAZZMIN_SETTINGS = {
     "site_title": "Admin",
 
     # Title on the brand, and login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Washington Natural Gas",
+    "site_header": "WaNatural Gas",
 
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "img/logo.png",
+    "site_logo": 'img/logo.png',
 
     # Welcome text on the login screen
     "welcome_sign": "Welcome to the Washington Natural Gas",
