@@ -1,10 +1,13 @@
 from django.shortcuts import render
 
+from service.models import Service
 from .models import About, Residential, Finance, ServicesPage
 
 
 def home_page(request):
+    services = Service.objects.all()
     context = {
+        'services': services,
         'active': 'home',
     }
     return render(request, 'home.html', context)

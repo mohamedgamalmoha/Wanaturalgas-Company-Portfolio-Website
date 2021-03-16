@@ -36,4 +36,16 @@ admin.site.register(Heating, CustomAdmin)
 
 admin.site.register(Cooling, CustomAdmin)
 
-admin.site.register(Service)
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+
+    list_display = ['__str__']
+
+    def has_add_permission(self, request):
+        if self.model.objects.count() >= 4:
+            return False
+        return super().has_add_permission(request)
+
+    def has_delete_permission(self, request, obj=None):
+        return False

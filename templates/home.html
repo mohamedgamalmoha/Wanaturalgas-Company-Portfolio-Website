@@ -72,30 +72,19 @@
         <h2 class="head-border-blue">our hvac services</h2>
         <div class="container">
           <div class="row">
-            <div class="col-lg-4 col-md-6 wow bounceInLeft" data-wow-duration="2.5s" data-wow-delay=".6s" data-wow-offset="300">
-              <div class="flip-cardd"><span class="circle"><img src="{% static 'img/service_13.png' %}"></span>
-                <h4>Repair</h4>
-                <p>For your complete residential heating and air conditioning repairs, let the professionals at Washington Natural Gas take care of you, for all your heating and cooling comfort needs. With our service team members,we will provide you with the best system for your needs at the best value.</p><span class="normall"> read more</span>
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6 wow 
+            {% if forloop.counter == 4 %}offset-lg-4 bounceInRight{% else %}bounceInLeft{% endif %}" 
+            data-wow-duration="2.5s" data-wow-offset="300" 
+            {% if forloop.counter == 1 %}data-wow-delay=".6s"
+            {% elif forloop.counter == 2 %}data-wow-delay=".4s"
+            {% else %}data-wow-delay=".2s"{% endif %}>
+              <div class="flip-cardd"><span class="circle"><img src="{{ service.image.url }}"></span>
+                <h4>{{ service.title }}</h4>
+                <p>{{ service.description|safe }}</p><a class="link-unstyled" href="{% url 'pages:services' %}"><span class="normall"> read more</span></a>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 wow bounceInLeft" data-wow-duration="2.5s" data-wow-delay=".4s" data-wow-offset="300">
-              <div class="flip-cardd"><span class="circle"><img src="{% static 'img/service_14.png' %}"></span>
-                <h4>Repair</h4>
-                <p>For your complete residential heating and air conditioning repairs, let the professionals at Washington Natural Gas take care of you, for all your heating and cooling comfort needs. With our service team members,we will provide you with the best system for your needs at the best value.</p><span class="normall"> read more</span>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow bounceInLeft" data-wow-duration="2.5s" data-wow-delay=".2s" data-wow-offset="300">
-              <div class="flip-cardd"><span class="circle"><img src="{% static 'img/service_15.png' %}"></span>
-                <h4>Repair</h4>
-                <p>For your complete residential heating and air conditioning repairs, let the professionals at Washington Natural Gas take care of you, for all your heating and cooling comfort needs. With our service team members,we will provide you with the best system for your needs at the best value.</p><span class="normall"> read more</span>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 offset-lg-4 wow bounceInRight" data-wow-duration="2.5s" data-wow-delay=".2s" data-wow-offset="300">
-              <div class="flip-cardd"><span class="circle"><img src="{% static 'img/download-2.png' %}"></span>
-                <h4>Repair</h4>
-                <p>For your complete residential heating and air conditioning repairs, let the professionals at Washington Natural Gas take care of you, for all your heating and cooling comfort needs. With our service team members,we will provide you with the best system for your needs at the best value.</p><span class="normall"> read more</span>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
