@@ -1,20 +1,5 @@
 {% load static %}
 
-{% comment %}
-<nav>
-    Nave bar here
-    <ul>
-        <li><a href="{% url 'pages:home' %}">Home</a>{% if active == 'home' %} <---{% endif %}</li>
-        <li><a href="{% url 'pages:about_us' %}">About Us</a>{% if active == 'about' %} <---{% endif %}</li>
-        <li><a href="{% url 'pages:residential' %}">Residential</a>{% if active == 'residential' %} <---{% endif %}</li>
-        <li><a href="{% url 'pages:financing' %}">Financing</a>{% if active == 'financing' %} <---{% endif %}</li>
-        <li><a href="{% url 'receives:contact_us' %}">Contact Us</a>{% if active == 'contact' %} <---{% endif %}</li>
-    </ul>
-</nav>
-{% endcomment %}
-
-
-
 <div class="upper-barr">
     <div class="container">
       <div class="row">
@@ -42,8 +27,8 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item {% if active == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:home' %}">Home </a></li>
           <li class="nav-item {% if active == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:about_us' %}">About</a></li>
-          <li class="nav-item {% if active == 'heating' %}active{% endif %}"><a class="nav-link" href="#">Heating</a></li>
-          <li class="nav-item {% if active == 'cooling' %}active{% endif %}"><a class="nav-link" href="#">Cooling</a></li>
+          <li class="nav-item {% if active == 'heating' %}active{% endif %}"><a class="nav-link" href="{% url 'service:heating' %}">Heating</a></li>
+          <li class="nav-item {% if active == 'cooling' %}active{% endif %}"><a class="nav-link" href="{% url 'service:cooling' %}">Cooling</a></li>
           <li class="nav-item {% if active == 'services' %}active{% endif %}"><a class="nav-link" href="#">Services</a></li>
           <li class="nav-item {% if active == 'residential' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:residential' %}">Residential</a></li>
           <li class="nav-item {% if active == 'financing' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:financing' %}">Financing</a></li>

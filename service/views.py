@@ -1,16 +1,19 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from .models import Heating, Cooling, Post
 from django.contrib.contenttypes.models import ContentType
+from django.shortcuts import get_object_or_404, render
+
+from .models import Cooling, Heating, Post
 
 
-def HeatingView(request):
+def heating_view(request):
     heating = Heating.objects.first()
-    if not heating:
-        return HttpResponse('No heating posts')
-    obj_id = heating.id
-    content_type = ContentType.objects.get_for_model(Heating)
-    posts = Post.objects.filter(content_type=content_type, object_id=obj_id)
+    if heating:  # will remove this if later as we prevented delete permission
+        obj_id = heating.id
+        content_type = ContentType.objects.get_for_model(Heating)
+        posts = Post.objects.filter(content_type=content_type,
+                                    object_id=obj_id)
+    else:
+        posts = None
+
     context = {
         'heating': heating,
         'posts': posts,
@@ -18,36 +21,41 @@ def HeatingView(request):
     return render(request, 'service/heating.html', context)
 
 
-def CoolingView(request):
+def cooling_view(request):
     cooling = Cooling.objects.first()
-    if not cooling:
-        return HttpResponse('No Cooling posts')
-    obj_id = cooling.id
-    content_type = ContentType.objects.get_for_model(Heating)
-    posts = Post.objects.filter(content_type=content_type, object_id=obj_id)
+    if cooling:  # will remove this if later as we prevented delete permission
+        obj_id = cooling.id
+        content_type = ContentType.objects.get_for_model(Heating)
+        posts = Post.objects.filter(content_type=content_type,
+                                    object_id=obj_id)
+    else:
+        posts = None
+
     context = {
-        'Cooling': cooling,
+        'cooling': cooling,
         'posts': posts,
     }
-    return render(request, 'service/heating.html', context)
+    return render(request, 'service/cooling.html', context)
 
 
-def PostHeatingView(request, heating_id, post_id):
+def post_heating_view(request, heating_id, post_id):
     heating = get_object_or_404(Heating, id=heating_id)
     obj_id = heating.id
     content_type = ContentType.objects.get_for_model(Heating)
-    post = get_object_or_404(Post, content_type=content_type, object_id=obj_id, id=post_id)
+    post = get_object_or_404(Post, content_type=content_type,
+                             object_id=obj_id, id=post_id)
     context = {
         'post': post,
     }
     return render(request, 'service/post_heating.html', context)
 
 
-def PostCoolingView(request, heating_id, post_id):
+def post_cooling_view(request, heating_id, post_id):
     cooling = get_object_or_404(Cooling, id=heating_id)
     obj_id = cooling.id
     content_type = ContentType.objects.get_for_model(Heating)
-    post = get_object_or_404(Post, content_type=content_type, object_id=obj_id, id=post_id)
+    post = get_object_or_404(Post, content_type=content_type,
+                             object_id=obj_id, id=post_id)
     context = {
         'post': post,
     }

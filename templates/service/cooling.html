@@ -1,24 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% include 'base/navbar.html' %}
-{% include 'base/css.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
-<h4> {{ cooling.title }}</h4> <br>
-{{ cooling.description|safe }}
-{{ cooling.image }}
+{% block description %}Washington Natural Gas{% endblock %}
+{% block robots %}index, follow{% endblock %}
 
-{% for post in posts %}
-     <a href="{% url 'service:cooling_post' cooling.id post.id %}">{{ post.title }}</a>
-    {{ post.image }}
-    {{ post.description }}
-{% endfor %}
+{% block title %}Cooling{% endblock %}
 
-{% include 'base/footer.html' %}
-{% include 'base/js.html' %}
-</body>
-</html>
+{% block content %}
+
+
+ <div class="container">
+     <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
+     <h2>{{ cooling.title }}</h2>
+
+     <img src="{{ cooling.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
+    <br>
+     <p>{{ cooling.description|safe }}</p>
+
+     {% for post in posts %}
+        <a href="{% url 'service:cooling_post' cooling.id post.id %}">{{ post.title }}</a>
+        <img src="{{ post.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
+        <p>{{ post.description|safe }}</p>
+    {% endfor %}
+
+ </div>
+
+
+
+
+{% endblock %}
