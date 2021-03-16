@@ -1,5 +1,6 @@
 {% load static %}
 
+{% comment %}
 <nav>
     Nave bar here
     <ul>
@@ -10,9 +11,59 @@
         <li><a href="{% url 'receives:contact_us' %}">Contact Us</a>{% if active == 'contact' %} <---{% endif %}</li>
     </ul>
 </nav>
+{% endcomment %}
 
-{% if request.user.is_authenticated and request.user.is_staff %}
-<div>
-    <a href="{% url 'admin:index' %}">Go To Admin</a>
+
+
+<div class="upper-barr">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5"></div>
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col">
+              <div class="icon"><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus-g"></i><i class="fab fa-linkedin-in"></i></div>
+            </div>
+            <div class="col"> 
+              <div class="num"><i class="fas fa-phone-volume"> </i><span>(425) 355-3331</span></div>
+            </div>
+            <div class="col-lg-5">
+              <div class="mail"><i class="far fa-envelope"></i><span>info@wanaturalgas.com</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container"><a href="/"><img src="{% static 'img/logo.jpg' %}" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item {% if active == 'home' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:home' %}">Home </a></li>
+          <li class="nav-item {% if active == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:about_us' %}">About</a></li>
+          <li class="nav-item {% if active == 'heating' %}active{% endif %}"><a class="nav-link" href="#">Heating</a></li>
+          <li class="nav-item {% if active == 'cooling' %}active{% endif %}"><a class="nav-link" href="#">Cooling</a></li>
+          <li class="nav-item {% if active == 'services' %}active{% endif %}"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item {% if active == 'residential' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:residential' %}">Residential</a></li>
+          <li class="nav-item {% if active == 'financing' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:financing' %}">Financing</a></li>
+          <li class="nav-item {% if active == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'receives:contact_us' %}">Contact</a></li>
+          <li class="nav-item hidden-li">
+            <div class="icon"><i class="fab fa-facebook-f"></i><i class="fab fa-twitter"></i><i class="fab fa-google-plus-g"></i><i class="fab fa-linkedin-in"></i></div>
+          </li>
+          <li class="nav-item hidden-li">
+            <div class="num"><i class="fas fa-phone-volume"> </i><span>(425) 355-3331</span></div>
+          </li>
+          <li class="nav-item hidden-li">
+            <div class="mail"><i class="far fa-envelope"></i><span>info@wanaturalgas.com</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="contanier text-center mt-2 mb-4">
+  <p class="alert alert-warning">This button will be hidden later
+    <a href="{% url 'admin:index' %}" class="btn btn-info">Go To Admin</a>
+  </p>
 </div>
-{% endif %}
