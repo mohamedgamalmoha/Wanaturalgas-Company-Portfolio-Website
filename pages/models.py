@@ -29,6 +29,16 @@ class Residential(Core):
         return self.title
 
 
+class ServicesPage(Core):
+
+    class Meta:
+        verbose_name = 'Services Page'
+        verbose_name_plural = 'Services Page'
+
+    def __str__(self):
+        return self.title
+
+
 class Finance(models.Model):
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to='images/Finance/')

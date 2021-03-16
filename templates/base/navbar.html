@@ -29,7 +29,7 @@
           <li class="nav-item {% if active == 'about' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:about_us' %}">About</a></li>
           <li class="nav-item {% if active == 'heating' %}active{% endif %}"><a class="nav-link" href="{% url 'service:heating' %}">Heating</a></li>
           <li class="nav-item {% if active == 'cooling' %}active{% endif %}"><a class="nav-link" href="{% url 'service:cooling' %}">Cooling</a></li>
-          <li class="nav-item {% if active == 'services' %}active{% endif %}"><a class="nav-link" href="#">Services</a></li>
+          <li class="nav-item {% if active == 'services' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:services' %}">Services</a></li>
           <li class="nav-item {% if active == 'residential' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:residential' %}">Residential</a></li>
           <li class="nav-item {% if active == 'financing' %}active{% endif %}"><a class="nav-link" href="{% url 'pages:financing' %}">Financing</a></li>
           <li class="nav-item {% if active == 'contact' %}active{% endif %}"><a class="nav-link" href="{% url 'receives:contact_us' %}">Contact</a></li>

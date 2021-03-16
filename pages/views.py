@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import About, Residential, Finance
+from .models import About, Residential, Finance, ServicesPage
 
 
 def home_page(request):
@@ -35,3 +35,12 @@ def finance_page(request):
         'active': 'financing',
     }
     return render(request, 'pages/finance.html', context)
+
+
+def services_page(request):
+    service = ServicesPage.objects.all().first()
+    context = {
+        'service': service,
+        'active': 'services',
+    }
+    return render(request, 'pages/services.html', context)
