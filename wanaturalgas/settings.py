@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'multiselectfield',
     'crispy_forms',
+    'django_cleanup.apps.CleanupConfig',
 
     # Project Apps
     'pages.apps.PagesConfig',
