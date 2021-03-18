@@ -32,9 +32,9 @@ class CustomAdmin(admin.ModelAdmin):
         return False
 
 
-admin.site.register(Heating, CustomAdmin)
+# admin.site.register(Heating, CustomAdmin)
 
-admin.site.register(Cooling, CustomAdmin)
+# admin.site.register(Cooling, CustomAdmin)
 
 
 @admin.register(Service)

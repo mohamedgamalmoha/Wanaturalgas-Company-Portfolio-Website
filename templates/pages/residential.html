@@ -7,7 +7,8 @@
 {% block title %}Residential{% endblock %}
 
 {% block content %}
-    
+
+{% comment %}
 <div class="container">
     <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
     <h2>{{ residential.title }}</h2>
@@ -17,6 +18,10 @@
 
     <p>{{ residential.description|safe }}</p>
 </div>
+{% endcomment %}
 
+<div class="container">
+    <p class="alert alert-warning text-center">This page still under development</p>
+</div>
 
 {% endblock %}
