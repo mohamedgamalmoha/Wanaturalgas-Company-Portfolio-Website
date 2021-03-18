@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block description %}Washington Natural Gas{% endblock %}
 {% block robots %}index, follow{% endblock %}
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
-    
-<div class="container">
+
+    <!-- Start Stock Section-->
+    <section class="stock">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="shutter"><img src="{% static 'img/contact-us.jpg' %}" alt="Contact">
+            <button style="cursor: default;">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
     {% if messages %}
     <ul class="messages list-unstyled mt-4">
         {% for message in messages %}
@@ -27,13 +35,74 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <p class="alert alert-warning text-center">This form is functionally running (style will be updated later)</p>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-info"> submit</button>
-    </form>
-</div>
+    <!-- End Stock Section-->
+    <!-- Start Contact Form-->
+    <section class="contact-us">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11675.09165312622!2d-81.23461987200501!3d42.98305702418835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef20ea88d9b0b%3A0x28c7d7699a056b95!2z2YTZhtiv2YbYjCDYo9mI2YbYqtin2LHZitmI2Iwg2YPZhtiv2Kc!5e0!3m2!1sar!2seg!4v1608370560476!5m2!1sar!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <h2>For Fast & Responsive Service</h2>
+            <p>Let us know how to get back to you.</p>
+
+            <form method="POST" action="{% url 'receives:contact_us' %}">
+              {% csrf_token %}
+            <div class="all-forms">
+              <div class="form-main">
+                <label>First Name</label>
+                <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                  <input class="main-input" name="first_name" placeholder="First Name" type="text"><i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                </div>
+                <div class="validation-msg empty">Field can't be empty</div>
+              </div>
+              <div class="form-main">
+                <label>Last Name</label>
+                <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                  <input class="main-input" name="last_name" placeholder="Last Name" type="text"><i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                </div>
+              </div>
+            </div>
+            <div class="all-forms">
+              <div class="form-main">
+                <label>Email Address</label>
+                <div class="input-groups"><span><i class="far fa-envelope"></i></span>
+                  <input class="main-input" name="emil_address" placeholder="Email Address" type="email"><i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                </div>
+                <div class="validation-msg empty">Field can't be empty</div>
+              </div>
+              <div class="form-main">
+                <label>Phone Number</label>
+                <div class="input-groups"><span><i class="fas fa-phone-volume"></i></span>
+                  <input class="main-input" name="phone_number" placeholder="Phone Number" type="number" pattern="[0-9]"><i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                </div>
+                <div class="validation-msg empty">Field can't be empty</div>
+              </div>
+              <div class="form-main">
+                <label>Zip Code </label>
+                <div class="input-groups"><span><i class="fa fa-home"></i></span>
+                  <input class="main-input" name="zip_code" placeholder="Zip Code" type="number"><i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                </div>
+                <div class="validation-msg empty">Field can't be empty</div>
+              </div>
+            </div>
+            <div class="textarea">
+              <h2>How can we help?</h2>
+              <p>Feel free to E-mail us for Fast & Responsive Service.</p>
+              <h5>Questions</h5>
+              <textarea class="main-input" name="Question" cols="30" rows="10"></textarea>
+              <div class="validation-msg empty">Field can't be empty</div>
+              <button type="submit">send form</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Form-->
 
 
 {% endblock %}

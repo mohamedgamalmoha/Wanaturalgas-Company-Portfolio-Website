@@ -6,7 +6,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=250)
-    second_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250, blank=True, null=True)
     emil_address = models.EmailField()
     phone_number = PhoneNumberField(null=True)
     zip_code = models.PositiveIntegerField()
