@@ -500,12 +500,12 @@ body {
 /* mixin animation */
 /* mixin opacity */
 /* mixin transition */
-section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   text-transform: uppercase;
 }
 
@@ -550,6 +550,10 @@ section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd 
 
 .marg-bt {
   margin-bottom: 20px;
+}
+
+.marg-tp-row {
+  margin-top: 60px;
 }
 
 .scrolled {
@@ -1008,6 +1012,10 @@ body {
   overflow: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 section.about {
   padding: 100px 0px;
 }
@@ -1036,6 +1044,7 @@ section.about .container .col-md-7 {
 @media (max-width: 768px) {
   section.about .container .col-md-7 h3 {
     text-align: center;
+    font-size: 24px;
   }
 }
 
@@ -1053,6 +1062,12 @@ section.cooling {
 section.cooling h2 {
   text-align: center;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  section.cooling h2 {
+    font-size: 24px;
+  }
 }
 
 section.cooling .flip-cardd {
@@ -1214,6 +1229,12 @@ section.testimonials .container-fluid .row .gray #sliderr ol.carousel-indicators
   bottom: -100px;
 }
 
+@media (max-width: 768px) {
+  section.testimonials .container-fluid .row .gray #sliderr ol.carousel-indicators {
+    bottom: 0px;
+  }
+}
+
 section.testimonials .container-fluid .row .gray #sliderr ol.carousel-indicators li {
   width: 15px;
   height: 15px;
@@ -1273,6 +1294,12 @@ section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-ri
   color: #34c6f2;
 }
 
+@media (max-width: 768px) {
+  section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right {
+    right: 100px;
+  }
+}
+
 section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left {
   position: absolute;
   left: 175px;
@@ -1282,6 +1309,12 @@ section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-le
 
 section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left:hover {
   color: #34c6f2;
+}
+
+@media (max-width: 768px) {
+  section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left {
+    left: 100px;
+  }
 }
 
 section.contact {
@@ -1393,8 +1426,388 @@ footer img {
   padding: 20px 60px;
 }
 
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 30px;
+  }
+}
+
 .footer p {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+section.stock-about .shutter {
+  width: 100%;
+  height: 360px;
+  background-color: #fff;
+}
+
+section.stock-about .shutter img {
+  width: 100%;
+  height: 100%;
+}
+
+section.stock-about .shutter button {
+  width: 175px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #FFFDFC;
+  color: #898989;
+  border: 1px solid #FFFDFC;
+  opacity: .6;
+  position: absolute;
+  top: 270px;
+  left: 60px;
+}
+
+@media (max-width: 768px) {
+  section.stock-about .shutter button {
+    width: 140px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+section.about-services {
+  padding: 40px 0px;
+  background-color: #0A495C;
+  color: #fff;
+}
+
+section.about-services .part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.about-services .part .content {
+  margin-left: 25px;
+}
+
+section.about-services .part .content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section.about-services .part .content h3:hover {
+  color: #ff8313;
+}
+
+section.about-services .part .content p {
+  line-height: 1.5;
+  color: #9f9f9f;
+}
+
+section.about-services .part img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-us {
+  margin-bottom: 40px;
+  padding: 70px 0;
+}
+
+.about-us .h1 {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: -3px;
+  font-weight: 900;
+  font-size: 62px;
+}
+
+@media (max-width: 768px) {
+  .about-us .h1 {
+    font-size: 42px;
+  }
+}
+
+.about-us hr {
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+  .about-us h3 {
+    font-size: 22px;
+  }
+}
+
+.about-us img {
+  width: 900px;
+}
+
+.about-ceo {
+  padding: 80px 0px;
+  background-color: #eee;
+  min-height: 300px;
+}
+
+.about-ceo img {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.about-ceo h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .about-ceo h2 {
+    font-size: 22px;
+  }
+}
+
+.about-ceo .lead {
+  line-height: 1.8;
+}
+
+.about-ceo button {
+  width: 175px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background-color: #34c6f2;
+  color: #fff;
+  border: 1px solid #34c6f2;
+}
+
+.about-ceo button:hover {
+  background-color: #fff;
+  color: #34c6f2;
+  border: 1px solid #34c6f2;
+}
+
+section.stock .shutter {
+  width: 100%;
+  height: 450px;
+  background-color: #fff;
+}
+
+section.stock .shutter img {
+  width: 100%;
+  height: 100%;
+}
+
+section.stock .shutter button {
+  width: 175px;
+  height: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #FFFDFC;
+  color: #898989;
+  border: 1px solid #FFFDFC;
+  opacity: .6;
+  position: absolute;
+  top: 425px;
+  right: 45%;
+}
+
+@media (max-width: 768px) {
+  section.stock .shutter button {
+    right: 30%;
+    bottom: 0;
+    top: 380px;
+  }
+}
+
+section.contact-us {
+  padding: 100px 0;
+  background-color: #F5F4F4;
+}
+
+section.contact-us .map {
+  text-align: center;
+}
+
+section.contact-us .map iframe {
+  margin-bottom: 30px;
+  width: 80%;
+}
+
+section.contact-us h2 {
+  text-align: center;
+}
+
+section.contact-us p {
+  text-align: center;
+}
+
+section.contact-us .all-forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+section.contact-us .all-forms:first-of-type {
+  margin-left: 100px;
+}
+
+@media (max-width: 991px) {
+  section.contact-us .all-forms:first-of-type {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  section.contact-us .all-forms {
+    display: block;
+  }
+}
+
+section.contact-us .all-forms .form-main {
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  section.contact-us .all-forms .form-main {
+    width: auto;
+  }
+}
+
+section.contact-us .all-forms .form-main label {
+  margin-right: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+section.contact-us .all-forms .form-main .input-groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.contact-us .all-forms .form-main .input-groups span {
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+}
+
+section.contact-us .all-forms .form-main .input-groups input {
+  width: 80%;
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+  outline: none;
+}
+
+section.contact-us .all-forms .form-main .input-groups i.check1 {
+  position: relative;
+  right: 70px;
+  top: 10px;
+  color: green;
+  opacity: 0;
+}
+
+section.contact-us .all-forms .form-main .input-groups i.check2 {
+  position: relative;
+  right: 70px;
+  top: 10px;
+  color: red;
+  opacity: 0;
+}
+
+section.contact-us .all-forms .form-main .validation-msg.empty {
+  color: #F00;
+  margin-top: 10px;
+  display: none;
+}
+
+section.contact-us .all-forms .form-main.has-words-right label {
+  color: green;
+}
+
+section.contact-us .all-forms .form-main.has-words-right .input-groups span {
+  background-color: #e6f5c7;
+  border: 1px solid green;
+}
+
+section.contact-us .all-forms .form-main.has-words-right .input-groups span i {
+  color: green;
+}
+
+section.contact-us .all-forms .form-main.has-words-right .input-groups input {
+  border: 1px solid green;
+}
+
+section.contact-us .all-forms .form-main.has-words-right .input-groups .valid-icon-1 {
+  opacity: 1;
+}
+
+section.contact-us .all-forms .form-main.has-words-wrong label {
+  color: red;
+}
+
+section.contact-us .all-forms .form-main.has-words-wrong .input-groups span {
+  background-color: #f5d2d7;
+  border: 1px solid red;
+}
+
+section.contact-us .all-forms .form-main.has-words-wrong .input-groups span i {
+  color: red;
+}
+
+section.contact-us .all-forms .form-main.has-words-wrong .input-groups input {
+  border: 1px solid red;
+}
+
+section.contact-us .all-forms .form-main.has-words-wrong .input-groups .valid-icon-2 {
+  opacity: 1;
+}
+
+section.contact-us .textarea {
+  text-align: center;
+}
+
+section.contact-us .textarea h5 {
+  font-weight: bold;
+}
+
+section.contact-us .textarea textarea {
+  width: 600px;
+  height: 250px;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  section.contact-us .textarea textarea {
+    width: 250px;
+  }
+}
+
+section.contact-us .textarea .validation-msg.empty {
+  color: #F00;
+  margin-top: 10px;
+  display: none;
+}
+
+section.contact-us .textarea button {
+  width: 400px;
+  height: 40px;
+  background-color: #34c6f2;
+  color: #fff;
+  border: 1px solid #34c6f2;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  section.contact-us .textarea button {
+    width: 260px;
+  }
 }
 
 .upper-barr {
@@ -1592,9 +2005,23 @@ nav.bg-light ul li.nav-item .mail span:hover {
           animation: fadeInUpSD 2s .5s ease 1;
 }
 
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2 {
+    width: 220px;
+    font-size: 20px;
+  }
+}
+
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.tow {
   background-color: #fff;
   color: #133660;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.tow {
+    width: 220px;
+    font-size: 20px;
+  }
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.one {
@@ -1603,13 +2030,34 @@ nav.bg-light ul li.nav-item .mail span:hover {
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.one {
+    width: auto;
+    font-size: 20px;
+  }
+}
+
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.third {
   background-color: transparent;
   color: #000;
 }
 
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.third {
+    width: 220px;
+    font-size: 20px;
+  }
+}
+
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.wid {
   width: 300px;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2.wid {
+    width: 170px;
+    font-size: 24px;
+  }
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption p {
@@ -1618,6 +2066,12 @@ nav.bg-light ul li.nav-item .mail span:hover {
   font-weight: bold;
   -webkit-animation: fadeInUpSD 2s .5s ease 1;
           animation: fadeInUpSD 2s .5s ease 1;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption p {
+    font-size: 18px;
+  }
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
@@ -1636,6 +2090,15 @@ nav.bg-light ul li.nav-item .mail span:hover {
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button:hover {
   background-color: #fff;
   color: #34c6f2;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+    margin-bottom: 15px;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button.orange {
