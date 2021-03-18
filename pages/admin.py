@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import About, Residential, Finance, ServicesPage
+from .models import AboutUs, Residential, Finance, ServicesPage
 
 
-@admin.register(About)
+@admin.register(AboutUs)
 class AboutAdmin(admin.ModelAdmin):
 
     list_display = ['__str__']

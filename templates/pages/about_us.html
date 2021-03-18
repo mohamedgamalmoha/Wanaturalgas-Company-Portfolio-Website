@@ -4,23 +4,98 @@
 {% block description %}Washington Natural Gas{% endblock %}
 {% block robots %}index, follow{% endblock %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}{{ about.title }}{% endblock %}
 
 {% block content %}
 
-
- <div class="container">
-     <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
-     <h2>{{ about.title }}</h2>
-
-     <img src="{{ about.image_1.url }}" alt="about us" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
-     <img src="{{ about.image_2.url }}" alt="about us" width="400px" height="400px" style="padding-left: 100px;">
-    <br>
-     <p>{{ about.description|safe }}</p>
-
- </div>
-
-
-
+     <!-- Start Stock-about Section-->
+     <section class="stock-about">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="shutter"><img src="{{ about.image_1.url }}" alt="about us">
+              <button style="cursor: default;">{{ about.title }}</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Stock-about Section-->
+      <!-- Start About-Us Section-->
+      <section class="about-us text-center">
+        <div class="container">
+          <h2 class="h1">{{ about.title }}</h2>
+          <hr>
+          {{ about.section_1|safe }}
+          <img class="img-thumbnail" src="{{ about.image_2.url }}" alt="Company Team">
+        </div>
+      </section>
+      <!-- End About-Us Section-->
+      <!-- Start About-Ceo Section-->
+      <section class="about-ceo">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5"><img class="img-responsive" src="{{ about.image_3.url }}" alt="Contact us"></div>
+            <div class="col-lg-7">
+              {{ about.section_2|safe }}
+              <form action="{% url 'receives:contact_us' %}">
+                <button type="submit" class="hvr-wobble-horizontal">Contact Us</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About-Ceo Section-->
+      <!-- Start about-services Section-->
+      <section class="about-services">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="part"><span><i class="fa fa-flag-checkered fa-2x"></i></span>
+                <div class="content">
+                  <h3>our goal</h3>
+                  <p>To provide professional heating, cooling and air quality services, and installations, and to maintain happy customers with a comfortable home without callbacks. That’s our ultimate goal!</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="part"><span><i class="fa fa-wrench fa-2x"></i></span>
+                <div class="content">
+                  <h3>Repairs</h3>
+                  <p>On furnaces, heat pumps, tankless water heaters, air conditioning, air filtration systems, standard water heaters, and more. We stock most parts on our trucks to complete the repairs the first time out to your home, saving you time, money and aggravation. We can also call to meet you so you don’t have to wait at your home all day.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="part"><span><i class="fa fa-recycle fa-2x"></i></span>
+                <div class="content">
+                  <h3>Replacement</h3>
+                  <p>Quality installations, provided by installers dedicated to creating a system that will improve your family’s comfort in a big way, and educating you on how to set and maintain your system. We’re very particular about your air filtration, and having easy access to your filters, as well as your thermostat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row marg-tp-row">
+            <div class="col-md-4">
+              <div class="part"><span><i class="fa fa-check-square fa-2x"></i></span>
+                <div class="content">
+                  <h3>Maintenance & inspections</h3>
+                  <p>Fast inspections and tune-ups for pre-season start-ups to reduce breakdowns around the holidays and lower your high utility bills. Safety inspections for real estate transactions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="part"><span><i class="fa fa-users fa-2x"></i></span>
+                <div class="content">
+                  <h3>our pepole</h3>
+                  <p>Carefully selected, checked-out, trained and tested individuals with above average accountability high standards with very efficient communication skills, and they are dedicated to excellence.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="part"><img src="{{ about.image_4.url }}" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End about-services Section-->
 
 {% endblock %}
