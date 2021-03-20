@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
-from django.views.generic import TemplateView
 
-from .forms import MainRequestsForm
-from .models import Contact
+from django.views.generic import TemplateView, CreateView
+
+from .forms import ContactForm
+from .models import Contact, MainRequests
 
 
 class ContactUsPage(TemplateView):
@@ -40,7 +40,6 @@ def contact_us(request):
     else:
         msg = "something went wrong , please try again later."
         messages.error(request, msg)
-
     return redirect("receives:contact_us_success")
 
 
@@ -48,12 +47,16 @@ def success(request):
     return render(request, "receives/success.html", {})
 
 
-def MainRequestView(request):
-    if request.method == 'POST':
-        form = MainRequestsForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {
-        'form': MainRequestsForm
-    }
-    return render(request, 'receives/main_form.html', context)
+class ContactUsView(CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = 'receives/contact_us.html'
+    success_url = '/'
+
+
+class MainRequestView(CreateView):
+    model = MainRequests
+    fields = '__all__'
+    template_name = 'receives/main_form.html'
+    success_url = '/'
+
