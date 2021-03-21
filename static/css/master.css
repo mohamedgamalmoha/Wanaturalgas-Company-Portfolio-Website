@@ -500,12 +500,12 @@ body {
 /* mixin animation */
 /* mixin opacity */
 /* mixin transition */
-section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, section.big-form .main-section .container .contain-form form button, section.big-form .main-section .container p span, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, section.big-form .main-section h3, section.big-form .main-section .container h2, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   text-transform: uppercase;
 }
 
@@ -1623,6 +1623,12 @@ section.stock .shutter {
   background-color: #fff;
 }
 
+@media (max-width: 768px) {
+  section.stock .shutter {
+    height: 65%;
+  }
+}
+
 section.stock .shutter img {
   width: 100%;
   height: 100%;
@@ -1634,7 +1640,6 @@ section.stock .shutter button {
   font-size: 24px;
   font-weight: bold;
   background-color: #FFFDFC;
-  color: #898989;
   border: 1px solid #FFFDFC;
   opacity: .6;
   position: absolute;
@@ -1644,10 +1649,51 @@ section.stock .shutter button {
 
 @media (max-width: 768px) {
   section.stock .shutter button {
-    right: 30%;
+    width: 175px;
+    height: 60px;
+    font-size: 24px;
+    right: 37%;
     bottom: 0;
-    top: 300px;
+    top: 330px;
   }
+}
+
+@media (min-width: 551px) and (max-width: 650px) {
+  section.stock .shutter button {
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    right: 35%;
+    bottom: 0;
+    top: 260px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 550px) {
+  section.stock .shutter button {
+    width: 150px;
+    height: 45px;
+    font-size: 20px;
+    right: 35%;
+    bottom: 0;
+    top: 240px;
+  }
+}
+
+@media (max-width: 500px) {
+  section.stock .shutter button {
+    width: 135px;
+    height: 40px;
+    font-size: 18px;
+    right: 27%;
+    bottom: 0;
+    top: 160px;
+  }
+}
+
+section.stock .shutter button a {
+  color: #898989;
+  text-decoration: none;
 }
 
 section.contact-us {
@@ -1839,6 +1885,230 @@ section.contact-us .textarea button {
   }
 }
 
+section.big-form {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+section.big-form .main-section {
+  background-color: #F5F4F4;
+  padding: 30px 0;
+  padding-bottom: 80px;
+}
+
+section.big-form .main-section h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+section.big-form .main-section h3.head-border-blue:after {
+  margin-bottom: 0px;
+}
+
+section.big-form .main-section .container .contain-form {
+  background-color: #fff;
+  color: #9f9f9f;
+  padding: 30px 20px;
+}
+
+section.big-form .main-section .container .contain-form h5, section.big-form .main-section .container .contain-form h6 {
+  font-weight: bold;
+}
+
+section.big-form .main-section .container .contain-form .checkbox input {
+  margin-right: 10px;
+}
+
+section.big-form .main-section .container .contain-form .checkbox label {
+  font-weight: bold;
+}
+
+section.big-form .main-section .container .contain-form h6 {
+  margin-bottom: 20px;
+}
+
+section.big-form .main-section .container .contain-form input[type="text"] {
+  width: 50%;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  section.big-form .main-section .container .contain-form form .all-forms:first-of-type {
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  section.big-form .main-section .container .contain-form form .all-forms {
+    display: block;
+  }
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main {
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  section.big-form .main-section .container .contain-form form .all-forms .form-main {
+    width: auto;
+  }
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main label {
+  margin-right: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .input-groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .input-groups span {
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .input-groups input {
+  width: 80%;
+  border: 1px solid #ced4da;
+  padding: 6px 12px;
+  outline: none;
+  margin-bottom: 0px;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .input-groups i.check1 {
+  position: relative;
+  right: 70px;
+  top: 10px;
+  color: green;
+  opacity: 0;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .input-groups i.check2 {
+  position: relative;
+  right: 70px;
+  top: 10px;
+  color: red;
+  opacity: 0;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main .validation-msg.empty {
+  color: #F00;
+  margin-top: 10px;
+  display: none;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-right label {
+  color: green;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-right .input-groups span {
+  background-color: #e6f5c7;
+  border: 1px solid green;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-right .input-groups span i {
+  color: green;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-right .input-groups input {
+  border: 1px solid green;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-right .input-groups .valid-icon-1 {
+  opacity: 1;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-wrong label {
+  color: red;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-wrong .input-groups span {
+  background-color: #f5d2d7;
+  border: 1px solid red;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-wrong .input-groups span i {
+  color: red;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-wrong .input-groups input {
+  border: 1px solid red;
+}
+
+section.big-form .main-section .container .contain-form form .all-forms .form-main.has-words-wrong .input-groups .valid-icon-2 {
+  opacity: 1;
+}
+
+section.big-form .main-section .container .contain-form form button {
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: #34c6f2;
+  color: #fff;
+  border: 1px solid #34c6f2;
+}
+
+section.big-form .main-section .container .contain-form form button:hover {
+  background-color: #fff;
+  color: #34c6f2;
+  border: 1px solid #34c6f2;
+}
+
+section.big-form .main-section .container .contain-form form button:hover a {
+  color: #34c6f2;
+  text-decoration: none;
+}
+
+section.big-form .main-section .container .contain-form form button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section.big-form .main-section .container h2 {
+  color: #898989;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+section.big-form .main-section .container p {
+  color: #898989;
+}
+
+section.big-form .main-section .container p span {
+  color: #337ab7;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section.big-form .main-section .container p span:hover {
+  color: #0A495C;
+}
+
+section.big-form .main-section .container img {
+  width: 100%;
+  height: 100%;
+}
+
+section.big-form .main-section .container h4 {
+  color: #898989;
+  font-weight: bold;
+}
+
 .upper-barr {
   height: 55px;
   background-color: #ddd;
@@ -1906,12 +2176,13 @@ section.contact-us .textarea button {
 
 nav.bg-light {
   background-color: #fff !important;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @media (max-width: 992px) {
   nav.bg-light {
     position: static;
+    overflow: hidden;
   }
 }
 
@@ -1933,6 +2204,10 @@ nav.bg-light:before {
   nav.bg-light:before {
     display: none;
   }
+}
+
+nav.bg-light ul li.nav-item {
+  cursor: pointer;
 }
 
 nav.bg-light ul li.nav-item a.nav-link {
@@ -2017,12 +2292,28 @@ nav.bg-light ul li.nav-item .mail span:hover {
   background-color: #ff8313;
 }
 
-#carouselExampleCaptions .carousel-inner .carousel-item img.d-block.w-100 {
+#carouselExampleCaptions .carousel-inner .carousel-item {
   height: 90vh;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item {
+    height: 70vh;
+  }
+}
+
+#carouselExampleCaptions .carousel-inner .carousel-item img.d-block.w-100 {
+  height: 100%;
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption {
   bottom: 140px;
+}
+
+@media (max-width: 768px) {
+  #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption {
+    bottom: 100px;
+  }
 }
 
 #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2 {

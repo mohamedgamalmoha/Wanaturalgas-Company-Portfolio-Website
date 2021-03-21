@@ -8,19 +8,26 @@
 
 {% block content %}
     
-{% comment %}
-<div class="container">
-    <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
-    <h2>{{ finance.title }}</h2>
 
-    <img src="{{ finance.image.url }}" alt="finance" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
 
-    <p>{{ finance.description|safe }}</p>
-</div>
-{% endcomment %}
+<section class="stock-about">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="shutter" style="background: url({{ finance.header_image.url }});background-size: cover;">
+            <button style="cursor: default;">{{ finance.title }}</button>
+        </div>
+        </div>
+    </div>
+</section>
 
-<div class="container">
-    <p class="alert alert-warning text-center">This page still under development</p>
-</div>
+<section class="about-us">
+    <div class="container text-center">
+        {{ finance.description|safe }}
+        <br>
+        <img class="img-thumbnail" src="{{ finance.image_2.url }}" alt="services" style="height: 165px !important;width: 300px;!important">
+    </div>
+</section>
+
+
 
 {% endblock %}

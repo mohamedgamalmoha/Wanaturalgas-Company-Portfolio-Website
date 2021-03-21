@@ -58,7 +58,8 @@ class ServicesPage(Core):
 
 class Finance(models.Model):
     title = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='images/Finance/')
+    header_image = models.ImageField(upload_to='pages/finance/', null=True)
+    image_2 = models.ImageField(upload_to='pages/finance/', null=True)
     description = RichTextField()
 
     class Meta:
