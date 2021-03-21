@@ -1,5 +1,4 @@
 body {
-  font-family: 'Poppins', sans-serif;
   position: relative;
 }
 
@@ -14,6 +13,7 @@ body {
 .link-unstyled:hover {
   text-decoration: none;
 }
+
 
 @-webkit-keyframes fadeInUpSD {
   0% {
@@ -1447,6 +1447,25 @@ section.stock-about .shutter {
   width: 100%;
   height: 360px;
   background-color: #fff;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  section.stock-about .shutter {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  section.stock-about .shutter {
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  section.stock-about .shutter {
+    height: 130px;
+  }
 }
 
 section.stock-about .shutter img {
@@ -1464,7 +1483,7 @@ section.stock-about .shutter button {
   border: 1px solid #FFFDFC;
   opacity: .6;
   position: absolute;
-  top: 270px;
+  top: 150px;
   left: 60px;
 }
 
@@ -1473,6 +1492,15 @@ section.stock-about .shutter button {
     width: 140px;
     height: 45px;
     font-size: 18px;
+    top: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  section.stock-about .shutter button {
+    width: 120px;
+    height: 35px;
+    top: 45px;
   }
 }
 
@@ -1591,6 +1619,7 @@ section.about-services .part img {
 section.stock .shutter {
   width: 100%;
   height: 450px;
+  position: relative;
   background-color: #fff;
 }
 
@@ -1609,7 +1638,7 @@ section.stock .shutter button {
   border: 1px solid #FFFDFC;
   opacity: .6;
   position: absolute;
-  top: 425px;
+  top: 325px;
   right: 45%;
 }
 
@@ -1617,7 +1646,7 @@ section.stock .shutter button {
   section.stock .shutter button {
     right: 30%;
     bottom: 0;
-    top: 380px;
+    top: 300px;
   }
 }
 
@@ -1877,6 +1906,7 @@ section.contact-us .textarea button {
 
 nav.bg-light {
   background-color: #fff !important;
+  overflow: hidden;
 }
 
 @media (max-width: 992px) {
