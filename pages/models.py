@@ -26,17 +26,14 @@ class AboutUs(models.Model):
         return self.title
 
 
-# class About(Core):
-
-#     class Meta:
-#         verbose_name = 'About Us Page'
-#         verbose_name_plural = 'About Us Page'
-
-#     def __str__(self):
-#         return self.title
-
-
-class Residential(Core):
+class ResidentialPage(models.Model):
+    title = models.CharField(max_length=250)
+    image_1 = models.ImageField(upload_to='pages/residential/')
+    image_2 = models.ImageField(upload_to='pages/residential/')
+    image_3 = models.ImageField(upload_to='pages/residential/')
+    image_4 = models.ImageField(upload_to='pages/residential/')
+    section_1 = RichTextField()
+    section_2 = RichTextField()
 
     class Meta:
         verbose_name = 'Residential Page'
@@ -44,7 +41,6 @@ class Residential(Core):
 
     def __str__(self):
         return self.title
-
 
 class ServicesPage(Core):
 
