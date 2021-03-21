@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
 from django.utils.safestring import mark_safe
 
-from .models import Heating, Cooling, Post, Service
+from .models import Post, Service  # , Heating, Cooling
 
 
 class PostInline(GenericTabularInline):

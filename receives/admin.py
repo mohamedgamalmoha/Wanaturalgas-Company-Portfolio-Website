@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, MainRequests
+from .models import Contact  # , MainRequests
 
 
 @admin.register(Contact)
@@ -14,4 +14,4 @@ class ContactAdmin(admin.ModelAdmin):
         return self.fields or [f.name for f in self.model._meta.fields]
 
 
-admin.site.register(MainRequests)
+# admin.site.register(MainRequests)

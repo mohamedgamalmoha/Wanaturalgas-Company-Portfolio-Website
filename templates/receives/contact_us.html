@@ -4,7 +4,7 @@
 
 {% block description %}Washington Natural Gas{% endblock %}
 {% block robots %}index, follow{% endblock %}
-{% block title %}Submit A Request{% endblock %}
+{% block title %}Contact Us{% endblock %}
 
 {% block content %}
 
@@ -36,18 +36,73 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <!-- End Stock Section-->
-
     <!-- Start Contact Form-->
     <section class="contact-us">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11675.09165312622!2d-81.23461987200501!3d42.98305702418835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef20ea88d9b0b%3A0x28c7d7699a056b95!2z2YTZhtiv2YbYjCDYo9mI2YbYqtin2LHZitmI2Iwg2YPZhtiv2Kc!5e0!3m2!1sar!2seg!4v1608370560476!5m2!1sar!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+          <div class="col-lg-12">
             <h2>For Fast & Responsive Service</h2>
             <p>Let us know how to get back to you.</p>
-            <form method="post" style=" width: 100%; display: inline-block;  margin-left: auto; margin-right: auto; text-align: left;">
-                {% csrf_token %}
-                {% crispy form %}
+            <form method="post">
+                {% csrf_token %}                
+                <div class="all-forms">
+                  <div class="form-main">
+                    <label>First Name</label>
+                    <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                      {{ form.first_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                    </div>
+                    <div class="validation-msg empty">Field can't be empty</div>
+                    <div class="text-danger">{{ form.first_name.errors }}</div>
+                  </div>
+                  <div class="form-main">
+                    <label>Last Name</label>
+                    <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                      {{ form.last_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                    </div>
+                    <div class="text-danger">{{ form.last_name.errors }}</div>
+                  </div>
+                </div>
+                <div class="all-forms">
+                  <div class="form-main">
+                    <label>Email Address</label>
+                    <div class="input-groups"><span><i class="far fa-envelope"></i></span>
+                      {{ form.emil_address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                    </div>
+                    <div class="validation-msg empty">Field can't be empty</div>
+                    <div class="text-danger">{{ form.emil_address.errors }}</div>
+                  </div>
+                  <div class="form-main">
+                    <label>Phone Number</label>
+                    <div class="input-groups"><span><i class="fas fa-phone-volume"></i></span>
+                      {{ form.phone_number }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      
+                    </div>
+                    <div class="validation-msg empty">Field can't be empty</div>
+                    <div class="text-danger">{{ form.phone_number.errors }}</div>
+                  </div>
+                  <div class="form-main">
+                    <label>Zip Code </label>
+                    <div class="input-groups"><span><i class="fa fa-home"></i></span>
+                      {{ form.zip_code }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                    </div>
+                    <div class="validation-msg empty">Field can't be empty</div>
+                    <div class="text-danger">{{ form.zip_code.errors }}</div>
+                  </div>
+                </div>
+                <div class="textarea">
+                  <h2>How can we help?</h2>
+                  <p>Feel free to E-mail us for Fast & Responsive Service.</p>
+                  <h5>Questions</h5>
+                  {{ form.Question }}
+                  <div class="validation-msg empty">Field can't be empty</div>
+                  <div class="text-danger">{{ form.Question.errors }}</div>
+                  <button type="submit">send form</button>
+                </div>
             </form>
           </div>
         </div>

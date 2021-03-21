@@ -9,7 +9,6 @@ class Core(models.Model):
     description = RichTextField()
 
 
-
 class AboutUs(models.Model):
     title = models.CharField(max_length=250)
     image_1 = models.ImageField(upload_to='pages/about/')

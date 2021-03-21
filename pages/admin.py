@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import AboutUs, Residential, Finance, ServicesPage
+from .models import AboutUs, ServicesPage  # , Residential, Finance
 
 
 @admin.register(AboutUs)
