@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from service.models import Service
-from .models import AboutUs, Residential, Finance, ServicesPage
+from .models import AboutUs, Finance, ServicesPage, ResidentialPage
 
 
 def home_page(request):
@@ -23,7 +23,7 @@ def about_page(request):
 
 
 def residential_page(request):
-    residential = Residential.objects.all().first()
+    residential = ResidentialPage.objects.all().first()
     context = {
         'residential': residential,
         'active': 'residential',

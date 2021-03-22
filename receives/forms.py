@@ -3,24 +3,19 @@ from .models import Contact, MainRequests
 
 from phonenumber_field.widgets import PhoneNumberInternationalFallbackWidget
 
+CHOICES = (
+    (True, 'Yes'),
+    (False, 'No')
+)
+
 
 class MainRequestsForm(forms.ModelForm):
-    #
-    # def __int__(self, *args, **kwargs):
-    #
-    #     ages = (
-    #         ('0 - 5 years', '0 - 5 years'),
-    #         ('6 - 10 years', '6 - 10 years'),
-    #         ('11 - 15 years', '11 - 15 years'),
-    #         ('16 - 20 years', '16 - 20 years'),
-    #     )
-    #     self.fields['equipment_age'].queryset = ages
-    #     super(MainRequestsForm, self).__init__(*args, **kwargs)
 
     class Meta:
         model = MainRequests
         fields = '__all__'
         widgets = {
+            'q1': forms.Select(choices=CHOICES, attrs={'class': 'select form-control'}),
             'equipment_age': forms.RadioSelect(),
         }
 
