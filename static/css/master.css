@@ -5,7 +5,9 @@ body {
 #page-container {
   min-height: 100vh;
 }
-
+form ul {
+  list-style: none;
+}
 .link-unstyled {
   text-decoration: none;
 }

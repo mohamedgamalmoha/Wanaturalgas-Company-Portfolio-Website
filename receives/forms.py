@@ -3,20 +3,36 @@ from .models import Contact, MainRequests
 
 from phonenumber_field.widgets import PhoneNumberInternationalFallbackWidget
 
-CHOICES = (
-    (True, 'Yes'),
-    (False, 'No')
-)
-
 
 class MainRequestsForm(forms.ModelForm):
 
     class Meta:
         model = MainRequests
-        fields = '__all__'
+        exclude = ['id', 'request_id']
         widgets = {
-            'q1': forms.Select(choices=CHOICES, attrs={'class': 'select form-control'}),
+            'q1': forms.RadioSelect(),
             'equipment_age': forms.RadioSelect(),
+
+            'first_name': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'First Name'}),
+            'last_name': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'Last Name'}),
+            'email': forms.EmailInput(attrs={
+                'class': 'main-input', 'placeholder': 'Email'}),
+            'contact_phone': PhoneNumberInternationalFallbackWidget(attrs={
+                'class': 'main-input', 'placeholder': 'Contact Phone'}),
+            'cell_phone': PhoneNumberInternationalFallbackWidget(attrs={
+                'class': 'main-input', 'placeholder': 'Cell Phone'}),
+            'street_address': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'Street Address'}),
+            'address_line_2': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'Address Line 2'}),
+            'wa': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'WA'}),
+            'city': forms.TextInput(attrs={
+                'class': 'main-input', 'placeholder': 'City'}),
+            'zip_code': forms.NumberInput(attrs={
+                'class': 'main-input', 'placeholder': 'ZIP / Postal Code'}),
         }
 
 

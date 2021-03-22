@@ -1,14 +1,31 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 
 {% block description %}Washington Natural Gas{% endblock %}
 {% block robots %}index, follow{% endblock %}
-{% block title %}Contact Us{% endblock %}
+{% block title %}Submit A Request{% endblock %}
 
 {% block content %}
-  <body>
-    <!-- Start Navbar-->
+    <div class="container">
+        {% if messages %}
+        <ul class="messages list-unstyled mt-4">
+            {% for message in messages %}
+            <li class="alert {{ message.tags }} messages alert-dismissible fade show" role="alert">
+            {% if message.tags == 'alert-danger' %}
+            <i class="fas fa-exclamation-circle"></i>
+            {% else %}
+            <i class="fas fa-check-circle"></i>
+            {% endif %}
+            {{ message }}
+            <button type="button" class="close" data-dismiss='alert' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+            </button>
+            </li>
+            <hr>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
     <section class="big-form">
       <div class="main-section">
         <h3 class="head-border-blue">Air Conditioning installation</h3>
@@ -18,21 +35,9 @@
               <div class="contain-form">
                 <h5>Repairs/maintenance request</h5>
                 <p>form for maintenance and repair requests</p>
-                <form>
-                  <style>
-                    input[name="home_temperature"]{
-                        width: 50%;
-                    }
-                    ul {
-                        list-style: none;
-                        position: relative;
-                        left: -30px;
-                    }
-                    .form-control {
-                      width: 20%;
-                      }
-                  </style>
-
+                <form method="post">
+                  {% csrf_token %}
+                
                 <h6>Is your heating and air conditioning system operating & maintaining a comfortable temperature?</h6>{{ form.q1 }}
                 <div class="text-danger">{{ form.q1.errors }}</div><br>
 
@@ -59,14 +64,16 @@
                         {{ form.first_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.first_name.errors }}</div>
                     </div>
 
                     <div class="form-main">
                       <label>Last Name</label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                      {{ form.second_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      {{ form.last_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.last_name.errors }}</div>
                     </div>
                   </div>
 
@@ -74,17 +81,19 @@
                     <div class="form-main">
                       <label>Email</label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                        {{ form.emil_address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                        {{ form.email }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.email.errors }}</div>
                     </div>
 
                     <div class="form-main">
                       <label>Contact Phone </label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                        {{ form.contact_number }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                        {{ form.contact_phone }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.contact_phone.errors }}</div>
                     </div>
                   </div>
 
@@ -92,17 +101,19 @@
                     <div class="form-main">
                       <label>Cell Phone</label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                       {{ form.cell_number }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                       {{ form.cell_phone }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.cell_phone.errors }}</div>
                     </div>
 
                     <div class="form-main">
                       <label>Street Address</label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                       {{ form.address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                       {{ form.street_address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.street_address.errors }}</div>
                     </div>
                   </div>
 
@@ -110,9 +121,9 @@
                     <div class="form-main">
                       <label>Address Line 2</label>
                       <div class="input-groups"><span><i class="fas fa-user"></i></span>
-                       {{ form.address_line }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                       {{ form.address_line_2 }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
-                      <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.address_line_2.errors }}</div>
                     </div>
 
                     <div class="form-main">
@@ -121,6 +132,7 @@
                         {{ form.city }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.city.errors }}</div>
                     </div>
                   </div>
 
@@ -131,6 +143,7 @@
                        {{ form.wa }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.wa.errors }}</div>
                     </div>
 
                     <div class="form-main">
@@ -139,10 +152,11 @@
                        {{ form.zip_code }} <i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
                       </div>
                       <div class="validation-msg empty">Field can't be empty</div>
+                      <div class="text-danger">{{ form.zip_code.errors }}</div>
                     </div>
                   </div>
 
-                  <button class="hvr-wobble-horizontal"><a href="forms-text.html">Submit  </a></button>
+                  <button class="hvr-wobble-horizontal" type="submit">Submit</button>
                 </form>
               </div>
             </div>
@@ -150,9 +164,4 @@
         </div>
       </div>
     </section>
-<script>
-  var element = document.getElementById('id_equipment_age_0');
-  element.parentElement.parentElement.remove();
-</script>
-  </body>
 {% endblock %}

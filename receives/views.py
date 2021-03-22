@@ -1,4 +1,4 @@
-# from django.contrib import messages
+from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render  # , redirect
 from django.urls import reverse_lazy
@@ -61,8 +61,14 @@ def success(request):
     return render(request, "receives/success.html", {})
 
 
-class MainRequestView(CreateView):
+class MainRequestView(SuccessMessageMixin, CreateView):
     model = MainRequests
     form_class = MainRequestsForm
-    template_name = 'receives/forms.html'
-    success_url = '/'
+    template_name = 'receives/submit_request.html'
+    success_url = reverse_lazy('receives:request')
+    success_message = "Request has been sent successfully."
+    error_message = 'Something Wrong, please correct errors below.'
+
+    def form_invalid(self, form):
+        messages.error(self.request, self.error_message)
+        return super().form_invalid(form)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact  # , MainRequests
+from .models import Contact, MainRequests
 
 
 @admin.register(Contact)
@@ -14,4 +14,13 @@ class ContactAdmin(admin.ModelAdmin):
         return self.fields or [f.name for f in self.model._meta.fields]
 
 
-# admin.site.register(MainRequests)
+@admin.register(MainRequests)
+class MainRequestsAdmin(admin.ModelAdmin):
+
+    list_display = ['__str__']
+
+    def has_add_permission(self, request):
+        return False
+
+    def get_readonly_fields(self, request, obj=None):
+        return self.fields or [f.name for f in self.model._meta.fields]

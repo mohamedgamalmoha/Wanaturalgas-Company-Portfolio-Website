@@ -1,7 +1,15 @@
 from django.db import models
-
+from django.db.models.signals import pre_save
 from multiselectfield import MultiSelectField
 from phonenumber_field.modelfields import PhoneNumberField
+
+from wanaturalgas.utils import unique_request_id_generator
+
+
+CHOICES = (
+    ('Yes', 'Yes'),
+    ('No', 'No')
+)
 
 
 class Contact(models.Model):
@@ -21,10 +29,12 @@ class Contact(models.Model):
 
 
 class MainRequests(models.Model):
-    q1 = models.BooleanField(
+    request_id = models.CharField(max_length=120, blank=True)
+    q1 = models.CharField(
         'Is your heating and air conditioning system operating & maintaining a comfortable temperature?',
+        choices=CHOICES, max_length=3
     )
-    home_temperature = models.IntegerField('What is the temperature of your home?')
+    home_temperature = models.CharField('What is the temperature of your home?', max_length=255)
     interest_fields = (
         ('Repair', 'Repair'),
         ('Maintenance', 'Maintenance'),
@@ -55,13 +65,13 @@ class MainRequests(models.Model):
                                      choices=ages, max_length=50)
 
     first_name = models.CharField(max_length=250)
-    second_name = models.CharField(max_length=250)
-    emil_address = models.EmailField()
-    contact_number = PhoneNumberField()
-    cell_number = PhoneNumberField()
+    last_name = models.CharField(max_length=250)
+    email = models.EmailField()
+    contact_phone = PhoneNumberField()
+    cell_phone = PhoneNumberField()
 
-    address = models.CharField(max_length=150)
-    address_line = models.CharField(max_length=250, null=True)
+    street_address = models.CharField(max_length=150)
+    address_line_2 = models.CharField(max_length=250, null=True, blank=True)
     wa = models.CharField(max_length=250, null=True)
     city = models.CharField(max_length=250)
     zip_code = models.PositiveIntegerField()
@@ -70,5 +80,13 @@ class MainRequests(models.Model):
         verbose_name = 'Received Request'
         verbose_name_plural = 'Received Requests'
 
-    def __str__(self):  # Will create request ID later
-        return "Request"
+    def __str__(self):
+        return f"Request No. {self.request_id}"
+
+
+def pre_save_request_id(sender, instance, *args, **kwargs):
+    if not instance.request_id:
+        instance.request_id = unique_request_id_generator(instance)
+
+
+pre_save.connect(pre_save_request_id, sender=MainRequests)
