@@ -4,8 +4,8 @@ from django.shortcuts import render  # , redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView  # , TemplateView
 
-from .forms import ContactForm
-from .models import Contact  # , MainRequests
+from .forms import ContactForm, MainRequestsForm
+from .models import Contact, MainRequests
 
 # Old Contact Us
 # class ContactUsPage(TemplateView):
@@ -61,8 +61,8 @@ def success(request):
     return render(request, "receives/success.html", {})
 
 
-# class MainRequestView(CreateView):
-#     model = MainRequests
-#     fields = '__all__'
-#     template_name = 'receives/main_form.html'
-#     success_url = '/'
+class MainRequestView(CreateView):
+    model = MainRequests
+    form_class = MainRequestsForm
+    template_name = 'receives/forms.html'
+    success_url = '/'

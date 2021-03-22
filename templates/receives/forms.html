@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block description %}Washington Natural Gas{% endblock %}
+{% block robots %}index, follow{% endblock %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+  <body>
+    <!-- Start Navbar-->
+    <section class="big-form">
+      <div class="main-section">
+        <h3 class="head-border-blue">Air Conditioning installation</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="contain-form">
+                <h5>Repairs/maintenance request</h5>
+                <p>form for maintenance and repair requests</p>
+                <form>
+                  <style>
+                    input[name="home_temperature"]{
+                        width: 50%;
+                    }
+                    ul {
+                        list-style: none;
+                        position: relative;
+                        left: -30px;
+                    }
+                  </style>
+
+                <h6>Is your heating and air conditioning system operating & maintaining a comfortable temperature?</h6>{{ form.q1 }}
+                <div class="text-danger">{{ form.q1.errors }}</div><br>
+
+
+                <h6>What is the temperature of your home?</h6> {{ form.home_temperature }}
+                <div class="text-danger">{{ form.home_temperature.errors }}</div>
+                  <br>
+
+                <h6>Are you interested in?</h6> {{ form.field_of_interest }}
+                <div class="text-danger">{{ form.field_of_interest.errors }}</div>
+
+                <h6>Regarding what type of equipment or issue of concern:</h6> {{ form.issue_of_concern }}
+                <div class="text-danger">{{ form.issue_of_concern.errors }}</div>
+
+                <h6>Approximate age of equipment</h6> {{ form.equipment_age }}
+
+
+                <div class="text-danger">{{ form.issue_of_concern.errors }}</div>
+
+                  <div class="all-forms">
+                    <div class="form-main">
+                      <label>First Name</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                        {{ form.first_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+
+                    <div class="form-main">
+                      <label>Last Name</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                      {{ form.second_name }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+                  </div>
+
+                  <div class="all-forms">
+                    <div class="form-main">
+                      <label>Email</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                        {{ form.emil_address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+
+                    <div class="form-main">
+                      <label>Contact Phone #</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                        {{ form.contact_number }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+                  </div>
+
+                  <div class="all-forms">
+                    <div class="form-main">
+                      <label>Cell Phone</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                       {{ form.cell_number }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+
+                    <div class="form-main">
+                      <label>Street Address</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                       {{ form.address }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+                  </div>
+
+                  <div class="all-forms">
+                    <div class="form-main">
+                      <label>Address Line 2</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                       {{ form.address_line }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+
+                    <div class="form-main">
+                      <label>City</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                        {{ form.city }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+                  </div>
+
+                  <div class="all-forms">
+                    <div class="form-main">
+                      <label>WA</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                       {{ form.wa }}<i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+
+                    <div class="form-main">
+                      <label>ZIP / Postal Code</label>
+                      <div class="input-groups"><span><i class="fas fa-user"></i></span>
+                       {{ form.zip_code }} <i class="fa fa-check valid-icon-1 check1"></i><i class="fas fa-times valid-icon-2 check2"></i>
+                      </div>
+                      <div class="validation-msg empty">Field can't be empty</div>
+                    </div>
+                  </div>
+
+                  <button class="hvr-wobble-horizontal"><a href="forms-text.html">Submit  </a></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<script>
+  var element = document.getElementById('id_equipment_age_0');
+  element.parentElement.parentElement.remove();
+</script>
+  </body>
+{% endblock %}

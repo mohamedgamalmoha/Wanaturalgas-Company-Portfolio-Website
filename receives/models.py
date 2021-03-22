@@ -61,7 +61,9 @@ class MainRequests(models.Model):
     cell_number = PhoneNumberField()
 
     address = models.CharField(max_length=150)
-    city = models.CharField(max_length=50)
+    address_line = models.CharField(max_length=250, null=True)
+    wa = models.CharField(max_length=250, null=True)
+    city = models.CharField(max_length=250)
     zip_code = models.PositiveIntegerField()
 
     class Meta:

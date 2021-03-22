@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
 from django.utils.safestring import mark_safe
 
-from .models import Post, Service  # , Heating, Cooling
+from .models import Post, Service, Heating, Cooling
 
 
 class PostInline(GenericTabularInline):
@@ -32,9 +32,9 @@ class CustomAdmin(admin.ModelAdmin):
         return False
 
 
-# admin.site.register(Heating, CustomAdmin)
+admin.site.register(Heating, CustomAdmin)
 
-# admin.site.register(Cooling, CustomAdmin)
+admin.site.register(Cooling, CustomAdmin)
 
 
 @admin.register(Service)

@@ -8,5 +8,5 @@ urlpatterns = [
     # path('contact-us/send', views.contact_us, name='contact_us'),
     path('contact-us/', views.ContactUsView.as_view(), name='contact_us'),
     path('success/', views.success, name='contact_us_success'),
-    # path('submit-request/', views.MainRequestView.as_view(), name='request'),
+    path('submit-request/', views.MainRequestView.as_view(), name='request'),
 ]
