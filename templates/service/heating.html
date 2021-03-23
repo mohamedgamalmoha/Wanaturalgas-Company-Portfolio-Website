@@ -10,43 +10,26 @@
 
 
 <div class="container">
-     <p class="alert alert-warning text-center">
-         This data is coming from the database and can be changed from Admin (style will be updated later)
-     </p>
-     <h2>{{ heating.title }}</h2>
-     <img src="{{ heating.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px"><br>
-     <p>{{ heating.description|safe }}</p>
-    <br><br>
- <section class="cooling">
-        <h2 class="head-border-blue">Posts</h2>
-      <div class="row">
-            {% for post in posts %}
-            <div class="col-lg-4 col-md-6 wow {% if forloop.counter == 4 %}offset-lg-4 bounceInRight{% else %}bounceInLeft{% endif %}"
-            data-wow-duration="2.5s" data-wow-offset="300"
-            {% if forloop.counter == 1 %}data-wow-delay=".6s"
-            {% elif forloop.counter == 2 %}data-wow-delay=".4s"
-            {% else %}data-wow-delay=".2s"{% endif %}>
-
-              <div class="flip-cardd"><img src="{{ post.image.url }}" style="width: 100px; height: 100px; border-radius: 50%; top: -10px;">
-                <h4>{{ post.title }}</h4>
-                <p>{{ post.description|str_split:'100' }}</p><a class="link-unstyled" href="{% url 'service:heating_post' heating.id post.id %}"><span class="normall"> read more</span></a>
-              </div>
-            </div>
-            {% endfor %}
-      </div>
- </section>
- </div>
-
-<!--
- <div class="container">
-    <p class="alert alert-warning text-center">This page still under development</p>
+  <p class="alert alert-warning text-center">This page still under development</p>
 </div>
-    {% for post in posts %}
-        <a href="{% url 'service:heating_post' heating.id post.id %}">{{ post.title }}</a>
-        <img src="{{ post.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
-        <p>{{ post.description|safe }}</p>
-    {% endfor %}
--->
+
+
+<section class="stock-about">
+  <div class="container-fluid">
+      <div class="row">
+      <div class="shutter" style="background: url({{ heating.image.url }});background-size: cover;">
+          <button style="cursor: default;">{{ heating.title }}</button>
+      </div>
+      </div>
+  </div>
+</section>
+<div class="container mt-3">
+  {% for post in posts %}
+  <a href="{% url 'service:heating_post' heating.id post.id %}">{{ post.title }}</a>
+  {% endfor %}
+</div>
+
+
 
 
 {% endblock %}

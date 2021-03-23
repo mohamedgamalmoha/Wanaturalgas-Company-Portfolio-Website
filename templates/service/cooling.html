@@ -8,27 +8,24 @@
 
 {% block content %}
 
-{% comment %}
- <div class="container">
-     <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
-     <h2>{{ cooling.title }}</h2>
-
-     <img src="{{ cooling.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
-    <br>
-     <p>{{ cooling.description|safe }}</p>
-
-     {% for post in posts %}
-        <a href="{% url 'service:cooling_post' cooling.id post.id %}">{{ post.title }}</a>
-        <img src="{{ post.image.url }}" alt="cooling" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
-        <p>{{ post.description|safe }}</p>
-    {% endfor %}
-
- </div>
-{% endcomment %}
 
 <div class="container">
     <p class="alert alert-warning text-center">This page still under development</p>
 </div>
 
 
+ <section class="stock-about">
+    <div class="container-fluid">
+        <div class="row">
+        <div class="shutter" style="background: url({{ cooling.image.url }});background-size: cover;">
+            <button style="cursor: default;">{{ cooling.title }}</button>
+        </div>
+        </div>
+    </div>
+</section>
+<div class="container mt-3">
+    {% for post in posts %}
+    <a href="{% url 'service:cooling_post' cooling.id post.id %}">{{ post.title }}</a>
+    {% endfor %}
+</div>
 {% endblock %}
