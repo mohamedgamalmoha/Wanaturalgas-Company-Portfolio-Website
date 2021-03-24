@@ -1,5 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
   position: relative;
+
 }
 
 #page-container {
@@ -502,12 +507,12 @@ form ul {
 /* mixin animation */
 /* mixin opacity */
 /* mixin transition */
-section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, section.big-form .main-section .container .contain-form form button, section.big-form .main-section .container p span, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, section.big-form .main-section .container .contain-form form button, section.big-form .main-section .container p span, section.heating-cardds .container .heating-text p.fir span, section.heating-cardds .container .flip-cardd, section.Residential .list-tabs ul li, section.Residential .list-tabs ul li a, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, section.big-form .main-section h3, section.big-form .main-section .container h2, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, section.big-form .main-section .h3, section.big-form .main-section .container h2, section.stock-heating .shutter button, section.heating-cardds .container .heating-text h2, section.heating-cardds .container .flip-cardd h4, section.heating-cardds .container .flip-cardd span.normall, section.stock-Residential .shutter button, section.Residential .list-tabs ul li a, section.Residential .text-columnn h2.head-border-blue, section.stock-Financing .shutter button, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   text-transform: uppercase;
 }
 
@@ -587,7 +592,8 @@ section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd 
   margin: 50vh auto;
   width: 40px;
   height: 40px;
-  position: relative;
+  position: fixed;
+  left: 50%;
 }
 
 .loading .sk-circle .sk-child {
@@ -1009,13 +1015,31 @@ section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd 
   color: #fff;
 }
 
-body {
+html {
+  --scrollbarBG: #fff;
+  --thumbBG: #34c6f2;
   overflow-x: hidden;
-  overflow: hidden;
 }
 
-html {
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  overflow: hidden;
   overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 2px solid var(--scrollbarBG);
 }
 
 section.about {
@@ -1111,6 +1135,12 @@ section.cooling .flip-cardd span.circle {
   border: 1px solid #ddd;
   text-align: center;
   display: inline-block;
+}
+
+section.cooling .flip-cardd span.circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 section.cooling .flip-cardd h4 {
@@ -1647,6 +1677,7 @@ section.stock .shutter button {
   position: absolute;
   top: 325px;
   right: 45%;
+  color: #898989;
 }
 
 @media (max-width: 768px) {
@@ -1691,11 +1722,6 @@ section.stock .shutter button {
     bottom: 0;
     top: 160px;
   }
-}
-
-section.stock .shutter button a {
-  color: #898989;
-  text-decoration: none;
 }
 
 section.contact-us {
@@ -1898,13 +1924,13 @@ section.big-form .main-section {
   padding-bottom: 80px;
 }
 
-section.big-form .main-section h3 {
+section.big-form .main-section .h3 {
   text-align: center;
   font-weight: bold;
 }
 
-section.big-form .main-section h3.head-border-blue:after {
-  margin-bottom: 0px;
+section.big-form .main-section .h3.head-border-blue:after {
+  margin-bottom: 30px;
 }
 
 section.big-form .main-section .container .contain-form {
@@ -2075,11 +2101,6 @@ section.big-form .main-section .container .contain-form form button:hover a {
   text-decoration: none;
 }
 
-section.big-form .main-section .container .contain-form form button a {
-  color: #fff;
-  text-decoration: none;
-}
-
 section.big-form .main-section .container h2 {
   color: #898989;
   margin-top: 15px;
@@ -2101,7 +2122,7 @@ section.big-form .main-section .container p span:hover {
   color: #0A495C;
 }
 
-section.big-form .main-section .container img {
+section.big-form .main-section .container .seleect img {
   width: 100%;
   height: 100%;
 }
@@ -2109,6 +2130,335 @@ section.big-form .main-section .container img {
 section.big-form .main-section .container h4 {
   color: #898989;
   font-weight: bold;
+}
+
+section.stock-heating .shutter {
+  width: 100%;
+  height: 360px;
+  background-color: #fff;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  section.stock-heating .shutter {
+    height: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  section.stock-heating .shutter {
+    height: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  section.stock-heating .shutter {
+    height: 160px;
+  }
+}
+
+@media (max-width: 500px) {
+  section.stock-heating .shutter {
+    height: 130px;
+  }
+}
+
+section.stock-heating .shutter img {
+  width: 100%;
+  height: 100%;
+}
+
+section.stock-heating .shutter button {
+  width: 175px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #FFFDFC;
+  color: #0A495C;
+  border: 1px solid #9f9f9f;
+  opacity: .6;
+  position: absolute;
+  top: 150px;
+  left: 60px;
+}
+
+@media (max-width: 991px) {
+  section.stock-heating .shutter button {
+    top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  section.stock-heating .shutter button {
+    width: 140px;
+    height: 45px;
+    font-size: 18px;
+    top: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  section.stock-heating .shutter button {
+    width: 120px;
+    height: 35px;
+    top: 45px;
+  }
+}
+
+section.heating-cardds {
+  padding: 60px 0;
+  background-color: #F5F4F4;
+}
+
+section.heating-cardds .container .heating-text h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #9f9f9f;
+}
+
+section.heating-cardds .container .heating-text h2.head-border-blue:after {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  section.heating-cardds .container .heating-text h2 {
+    font-size: 24px;
+  }
+}
+
+section.heating-cardds .container .heating-text p.fir {
+  color: #9f9f9f;
+  margin-bottom: 80px;
+}
+
+section.heating-cardds .container .heating-text p.fir span {
+  color: #337ab7;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section.heating-cardds .container .heating-text p.fir span:hover {
+  color: #0A495C;
+}
+
+section.heating-cardds .container .heating-text p.fir span.black {
+  color: #000;
+}
+
+section.heating-cardds .container .flip-cardd {
+  background-color: #fff;
+  padding: 0px 15px;
+  padding-bottom: 30px;
+  margin-bottom: 70px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+section.heating-cardds .container .flip-cardd:hover {
+  color: #fff;
+  background-color: #34c6f2;
+  border: 1px solid #34c6f2;
+}
+
+section.heating-cardds .container .flip-cardd:hover span.circle {
+  border: 1px solid #34c6f2;
+}
+
+section.heating-cardds .container .flip-cardd:hover p, section.heating-cardds .container .flip-cardd:hover span.normall {
+  color: #fff;
+}
+
+section.heating-cardds .container .flip-cardd:hover i {
+  color: #34c6f2;
+}
+
+section.heating-cardds .container .flip-cardd span.circle {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  top: -50px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  display: inline-block;
+}
+
+section.heating-cardds .container .flip-cardd span.circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+section.heating-cardds .container .flip-cardd h4 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+section.heating-cardds .container .flip-cardd p {
+  color: #898989;
+}
+
+section.heating-cardds .container .flip-cardd span.normall {
+  font-weight: bold;
+  color: #ff8313;
+}
+
+section.stock-Residential .shutter {
+  width: 100%;
+  height: 360px;
+  background-color: #fff;
+  position: relative;
+}
+
+section.stock-Residential .shutter img {
+  width: 100%;
+  height: 100%;
+}
+
+section.stock-Residential .shutter button {
+  width: 210px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #FFFDFC;
+  color: #0A495C;
+  border: 1px solid #9f9f9f;
+  opacity: .6;
+  position: absolute;
+  top: 150px;
+  left: 60px;
+}
+
+@media (max-width: 768px) {
+  section.stock-Residential .shutter button {
+    width: 140px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+section.Residential {
+  padding: 60px 0px;
+  background-color: #F5F4F4;
+}
+
+section.Residential .list-tabs ul {
+  list-style: none;
+  padding: 0;
+  border: 3px solid #e6e6e6;
+}
+
+section.Residential .list-tabs ul li {
+  border-bottom: 3px solid #e6e6e6;
+  letter-spacing: .5px;
+  padding: 16px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#f1f1f1));
+  background: linear-gradient(to bottom, #fbfbfb 0%, #f1f1f1 100%);
+  cursor: pointer;
+}
+
+section.Residential .list-tabs ul li:hover {
+  background: #34c6f2;
+}
+
+section.Residential .list-tabs ul li:hover a {
+  color: #fff;
+}
+
+section.Residential .list-tabs ul li a {
+  color: #9f9f9f;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+section.Residential .phoot {
+  margin-bottom: 30px;
+}
+
+section.Residential .phoot img {
+  width: 100%;
+  height: 100%;
+}
+
+section.Residential .text-columnn {
+  margin-bottom: 70px;
+}
+
+section.Residential .text-columnn h2.head-border-blue {
+  text-align: center;
+  font-weight: bold;
+  color: #9f9f9f;
+}
+
+section.Residential .text-columnn h2.head-border-blue.head-border-blue:after {
+  margin-bottom: 30px;
+}
+
+section.Residential .text-columnn p {
+  color: #9f9f9f;
+}
+
+section.Residential p {
+  color: #9f9f9f;
+}
+
+section.stock-Financing .shutter {
+  width: 100%;
+  height: 360px;
+  background-color: #fff;
+  position: relative;
+}
+
+section.stock-Financing .shutter img {
+  width: 100%;
+  height: 100%;
+}
+
+section.stock-Financing .shutter button {
+  width: 210px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  background-color: #FFFDFC;
+  color: #0A495C;
+  border: 1px solid #9f9f9f;
+  opacity: .6;
+  position: absolute;
+  top: 150px;
+  left: 60px;
+}
+
+@media (max-width: 768px) {
+  section.stock-Financing .shutter button {
+    width: 140px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+section.Financing {
+  padding: 60px 0px;
+  text-align: center;
+  background-color: #F5F4F4;
+}
+
+section.Financing p {
+  color: #9f9f9f;
+  line-height: 1.5;
+}
+
+section.Financing .loggo {
+  margin-top: 60px;
+}
+
+section.Financing .loggo img {
+  width: 100%;
+  height: 100%;
 }
 
 .upper-barr {

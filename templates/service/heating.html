@@ -8,27 +8,41 @@
 
 {% block content %}
 
-
-<div class="container">
-  <p class="alert alert-warning text-center">This page still under development</p>
-</div>
-
-
-<section class="stock-about">
+<section class="stock-heating">
   <div class="container-fluid">
-      <div class="row">
+    <div class="row">
       <div class="shutter" style="background: url({{ heating.image.url }});background-size: cover;">
-          <button style="cursor: default;">{{ heating.title }}</button>
+        <button style="cursor: default;">Heating</button>
       </div>
-      </div>
+    </div>
   </div>
 </section>
-<div class="container mt-3">
-  {% for post in posts %}
-  <a href="{% url 'service:heating_post' heating.id post.id %}">{{ post.title }}</a>
-  {% endfor %}
-</div>
 
+
+    <!-- Start Cards Section-->
+    <section class="heating-cardds">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heating-text">
+              <h2 class="head-border-blue">{{ heating.title }}</h2>
+              {{ heating.description|safe }}
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          {% for post in posts %}
+          <div class="col-lg-4 col-md-6 wow bounceInLeft" data-wow-duration="2.5s" data-wow-delay=".4s" data-wow-offset="300">
+            <div class="flip-cardd"><span class="circle"><img src="{{ post.image.url }}"></span>
+              <h4>{{ post.title }}</h4>
+              <p>{{ post.description|str_split:'100' }}</p><span class="normall"> <a style="color: #ff8313;" class="link-unstyled" href="{% url 'service:heating_post' heating.id post.id %}">read more</a></span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- End Cards Section-->
 
 
 

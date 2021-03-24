@@ -4,28 +4,27 @@
 {% block description %}Washington Natural Gas{% endblock %}
 {% block robots %}index, follow{% endblock %}
 
-{% block title %}{{ service.title }}{% endblock %}
+{% block title %}Services{% endblock %}
 
 {% block content %}
 
 <section class="stock-about">
     <div class="container-fluid">
         <div class="row">
-        <div class="shutter" style="background: url({{ service.image_1.url }});background-size: cover;">
-            <button style="cursor: default;">{{ service.title }}</button>
-        </div>
+            <div class="shutter" style="background: url({{ service.image_1.url }});background-size: cover;">
+                <button style="cursor: default;">Services</button>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="about-us">
     <div class="container">
+        <h2 class="head-border-blue text-center">{{ service.title }}</h2>
         <img class="img-thumbnail" src="{{ service.image_2.url }}" alt="services">
         <hr>
         {{ service.description|safe }}
     </div>
 </section>
-
-
 
 {% endblock %}

@@ -14,20 +14,23 @@
     <div class="container-fluid">
         <div class="row">
         <div class="shutter" style="background: url({{ finance.header_image.url }});background-size: cover;">
-            <button style="cursor: default;">{{ finance.title }}</button>
+            <button style="cursor: default;">Financing</button>
         </div>
         </div>
     </div>
 </section>
 
-<section class="about-us">
-    <div class="container text-center">
-        {{ finance.description|safe }}
-        <br>
-        <img class="img-thumbnail" src="{{ finance.image_2.url }}" alt="services" style="height: 165px !important;width: 300px;!important">
+<section class="Financing">
+    <div class="container">
+     <h2 class="head-border-blue">{{ finance.title }}</h2>
+     {{ finance.description|safe }}
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="loggo"><img src="{{ finance.image_2.url }}" alt="Financing"></div>
+        </div>
+      </div>
     </div>
-</section>
-
+  </section>
 
 
 {% endblock %}
