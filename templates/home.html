@@ -80,7 +80,7 @@
             {% else %}data-wow-delay=".2s"{% endif %}>
               <div class="flip-cardd"><span class="circle"><img src="{{ service.image.url }}"></span>
                 <h4>{{ service.title }}</h4>
-                <p>{{ service.description|safe }}</p><a class="link-unstyled" href="{% url 'pages:services' %}"><span class="normall"> read more</span></a>
+                <p>{{ service.description|safe|linebreaks }}</p><a class="link-unstyled" href="{% url 'pages:services' %}"><span class="normall"> read more</span></a>
               </div>
             </div>
             {% endfor %}
@@ -149,10 +149,10 @@
             <div class="col-lg-6 wow slideInLeft" data-wow-duration="2s" data-wow-delay=".7s" data-wow-offset="250">
               <h2>HVAC BRANDS WE SERVICE</h2>
               <div class="testimonial">
-                <div class="client active"><img src="{% static 'img/Optimized.png' %}" alt=""></div>
-                <div class="client hidden"><img src="{% static 'img/Optimized-4.png' %}" alt=""></div>
-                <div class="client hidden"><img src="{% static 'img/Optimized-mitsubish.png' %}" alt=""></div>
-                <div class="client hidden"><img src="{% static 'img/payne-logo-orange.jpg' %}" alt=""></div><i class="fa fa-chevron-right fa-2x"></i><i class="fa fa-chevron-left fa-2x"></i>
+                <div class="client active"><img src="{% static 'img/Optimized.png' %}" alt="BRANDS"></div>
+                <div class="client hidden"><img src="{% static 'img/Optimized-4.png' %}" alt="BRANDS"></div>
+                <div class="client hidden"><img src="{% static 'img/Optimized-mitsubish.png' %}" alt="BRANDS"></div>
+                <div class="client hidden"><img src="{% static 'img/payne-logo-orange.jpg' %}" alt="BRANDS"></div><i class="fa fa-chevron-right fa-2x"></i><i class="fa fa-chevron-left fa-2x"></i>
               </div>
             </div>
             <div class="col-lg-6 gray wow slideInRight" data-wow-duration="2s" data-wow-offset="250">
