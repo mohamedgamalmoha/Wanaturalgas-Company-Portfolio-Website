@@ -53,7 +53,7 @@ class Cooling(Main):
 class Service(models.Model):
     image = models.ImageField(upload_to='images/services/', null=True)
     title = models.CharField(max_length=250)
-    description = RichTextField()
+    description = models.TextField()
 
     class Meta:
         verbose_name = 'Service'

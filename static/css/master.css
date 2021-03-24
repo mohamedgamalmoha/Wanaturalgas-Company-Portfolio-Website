@@ -1105,6 +1105,7 @@ section.cooling .flip-cardd {
   border-radius: 5px;
   border: 1px solid #ddd;
   cursor: pointer;
+  font-size: 15px !important;
 }
 
 section.cooling .flip-cardd:hover {
