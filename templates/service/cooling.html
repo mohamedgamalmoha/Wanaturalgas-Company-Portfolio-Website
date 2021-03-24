@@ -35,7 +35,7 @@
             <div class="col-lg-4 col-md-6 wow bounceInLeft" data-wow-duration="2.5s" data-wow-delay=".4s" data-wow-offset="300">
               <div class="flip-cardd"><span class="circle"><img src="{{ post.image.url }}"></span>
                 <h4>{{ post.title }}</h4>
-                <p>{{ post.description|str_split:'100' }}</p><span class="normall"> <a style="color: #ff8313;" class="link-unstyled" href="{% url 'service:cooling_post' cooling.id post.id %}">read more</a></span>
+                <p>{{ post.description|str_split:'100' }}</p><span class="normall"> <a style="color: #ff8313;" class="link-unstyled" href="{{ post.get_absolute_url }}">read more</a></span>
               </div>
             </div>
             {% endfor %}
