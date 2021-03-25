@@ -8,20 +8,6 @@
 
 {% block content %}
 
-{% comment %}
-<div class="container">
-    <p class="alert alert-warning text-center">This data is coming from the database and can be changed from Admin (style will be updated later)</p>
-    <h2>{{ residential.title }}</h2>
-
-    <img src="{{ residential.image_1.url }}" alt="residential" width="400px" height="400px" style="padding-right: 100px;padding-left:50px">
-    <img src="{{ residential.image_2.url }}" alt="residential" width="400px" height="400px" style="padding-left: 100px;">
-
-    <p>{{ residential.description|safe }}</p>
-</div>
-{% endcomment %}
-
-
-
     <!-- Start Stock Section-->
     <section class="stock-Residential">
         <div class="container-fluid">
@@ -36,6 +22,7 @@
       <!-- Start Residential content-->
       <section class="Residential">
         <div class="container">
+          {% include 'base/submit_request_button.html' %}
           <div class="row">
             <div class="col-lg-4">
               <div class="list-tabs">

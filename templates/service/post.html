@@ -4,15 +4,19 @@
 {% block description %}{{ post.title }}{% endblock %}
 {% block robots %}index, follow{% endblock %}
 
-{% block title %}Post{{ post.title }}{% endblock %}
+{% block title %}Post - {{ post.title }}{% endblock %}
 
 {% block content %}
 <section class="big-form">
     <div class="main-section">
+      <div class="container">
+      {% include 'base/back_button.html' %}
+      {% include 'base/submit_request_button.html' %}
+      </div>
       <h4 class="h3 head-border-blue">{{ post.title }}</h4>
       <div class="container">
         <div class="float-md-right float-sm-none"><img class="rounded" style="height: 205px;width: 320px;" src="{{ post.image.url }}" alt="{{ post.title }}" ></div>
-        <div class="ml-1">{{ post.description|safe }}</div>
+        <div class="ml-4">{{ post.description|safe }}</div>
       </div>
     </div>
 </section>

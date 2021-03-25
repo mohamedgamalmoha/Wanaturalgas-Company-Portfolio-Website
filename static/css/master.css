@@ -1,26 +1,25 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  position: relative;
+position: relative;
 
 }
 
 #page-container {
-  min-height: 100vh;
+min-height: 100vh;
 }
 form ul {
-  list-style: none;
+list-style: none;
 }
 .link-unstyled {
-  text-decoration: none;
+text-decoration: none;
 }
 
 .link-unstyled:hover {
-  text-decoration: none;
+text-decoration: none;
 }
-
 
 @-webkit-keyframes fadeInUpSD {
   0% {
@@ -507,12 +506,12 @@ form ul {
 /* mixin animation */
 /* mixin opacity */
 /* mixin transition */
-section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, section.big-form .main-section .container .contain-form form button, section.big-form .main-section .container p span, section.heating-cardds .container .heating-text p.fir span, section.heating-cardds .container .flip-cardd, section.Residential .list-tabs ul li, section.Residential .list-tabs ul li a, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+.container .ggo button.forrmm, section.about .container .col-md-5 img, section.cooling .flip-cardd, section.services .container .row .col-lg-5 img, section.testimonials .container-fluid .row .gray #sliderr .carousel-item .media .media-body h5, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-right, section.testimonials .container-fluid .row .col-lg-6 .testimonial .fa-chevron-left, section.contact .container .banner button, section.about-services .part .content h3, .about-ceo button, section.contact-us .textarea button, section.big-form .main-section .container .contain-form form button, section.big-form .main-section .container p span, section.heating-cardds .container .heating-text p.fir span, section.heating-cardds .container .flip-cardd, section.Residential .list-tabs ul li, section.Residential .list-tabs ul li a, .upper-barr .icon i, .upper-barr .num span, .upper-barr .mail span, nav.bg-light ul li.nav-item a.nav-link, nav.bg-light ul li.nav-item .icon i, nav.bg-light ul li.nav-item .num span, nav.bg-light ul li.nav-item .mail span, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
-section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, section.big-form .main-section .h3, section.big-form .main-section .container h2, section.stock-heating .shutter button, section.heating-cardds .container .heating-text h2, section.heating-cardds .container .flip-cardd h4, section.heating-cardds .container .flip-cardd span.normall, section.stock-Residential .shutter button, section.Residential .list-tabs ul li a, section.Residential .text-columnn h2.head-border-blue, section.stock-Financing .shutter button, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
+.container .ggo button.forrmm, section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd span.normall, section.services h2, section.testimonials .container-fluid .row .gray h2, section.testimonials .container-fluid .row .col-lg-6 h2, section.stock-about .shutter button, section.about-services .part .content h3, .about-us h3, .about-ceo button, section.stock .shutter button, section.contact-us .textarea button, section.big-form .main-section .h3, section.big-form .main-section .container h2, section.stock-heating .shutter button, section.heating-cardds .container .heating-text h2, section.heating-cardds .container .flip-cardd h4, section.heating-cardds .container .flip-cardd span.normall, section.stock-Residential .shutter button, section.Residential .list-tabs ul li a, section.Residential .text-columnn h2.head-border-blue, section.stock-Financing .shutter button, nav.bg-light ul li.nav-item a.nav-link, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption h2, #carouselExampleCaptions .carousel-inner .carousel-item .carousel-caption .btnn button {
   text-transform: uppercase;
 }
 
@@ -1012,6 +1011,34 @@ section.cooling h2, section.cooling .flip-cardd h4, section.cooling .flip-cardd 
   height: 100%;
   line-height: 50px;
   padding-left: 17px;
+  color: #fff;
+}
+
+.container .ggo {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container .ggo button.forrmm {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  background-color: #ff8313;
+  color: #fff;
+  border: 1px solid #ff8313;
+}
+
+.container .ggo button.forrmm:hover {
+  background-color: #fff;
+  color: #ff8313;
+}
+
+.container .ggo button.forrmm:hover a {
+  color: #ff8313;
+}
+
+.container .ggo button.forrmm a {
+  text-decoration: none;
   color: #fff;
 }
 
@@ -2136,7 +2163,7 @@ section.big-form .main-section .container h4 {
 section.stock-heating .shutter {
   width: 100%;
   height: 360px;
-  background-color: #fff;
+  background-size: cover;
   position: relative;
 }
 

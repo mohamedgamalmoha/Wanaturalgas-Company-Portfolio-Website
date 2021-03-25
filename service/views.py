@@ -42,7 +42,15 @@ def cooling_view(request):
 
 def post_view(request, post_id):
     post = get_object_or_404(Post, id=post_id)
+    cooling = Cooling.objects.first()
+
+    if cooling == post.content_object:
+        active = 'cooling'
+    else:
+        active = 'heating'
+
     context = {
         'post': post,
+        'active':active
     }
     return render(request, 'service/post.html', context)
